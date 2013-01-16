@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="23" version="2.0">
 <workbenchAdvisor/>
-<window height="1057" width="936" x="985" y="24">
+<window height="1057" width="932" x="483" y="75">
 <fastViewData fastViewLocation="1024"/>
 <intro standby="true"/>
 <perspectiveBar>
@@ -18,6 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -29,58 +30,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRaceCondition.java" partName="MyRaceCondition.java" path="/home/gaoang/Java/RaceCondition/src/MyRaceCondition.java" title="MyRaceCondition.java" tooltip="RaceCondition/src/MyRaceCondition.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RaceCondition/src/MyRaceCondition.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="485" selectionTopPixel="162"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="problem4_15.java" partName="problem4_15.java" path="/home/gaoang/Java/Examples_4/problem4_15.java" title="problem4_15.java" tooltip="Examples_4/problem4_15.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Examples_4/problem4_15.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="407" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_2.java" partName="Example5_2.java" path="/home/gaoang/Java/Example5/src/Example5_2.java" title="Example5_2.java" tooltip="Example5/src/Example5_2.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_2.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="362" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_4.java" partName="Example5_4.java" path="/home/gaoang/Java/Example5/src/Example5_4.java" title="Example5_4.java" tooltip="Example5/src/Example5_4.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_4.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="300" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_5.java" partName="Example5_5.java" path="/home/gaoang/Java/Example5/src/Example5_5.java" title="Example5_5.java" tooltip="Example5/src/Example5_5.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_5.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="642" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_6.java" partName="Example5_6.java" path="/home/gaoang/Java/Example5/src/Example5_6.java" title="Example5_6.java" tooltip="Example5/src/Example5_6.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_6.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="256" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_7.java" partName="Example5_7.java" path="/home/gaoang/Java/Example5/src/Example5_7.java" title="Example5_7.java" tooltip="Example5/src/Example5_7.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_7.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="438" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Problem5_16.java" partName="Problem5_16.java" path="/home/gaoang/Java/Example5/src/Problem5_16.java" title="Problem5_16.java" tooltip="Example5/src/Problem5_16.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Problem5_16.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_17.java" partName="Example5_17.java" path="/home/gaoang/Java/Example5/src/Example5_17.java" title="Example5_17.java" tooltip="Example5/src/Example5_17.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Example5_17.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="640" selectionTopPixel="43"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Problem5_18.java" partName="Problem5_18.java" path="/home/gaoang/Java/Example5/src/Problem5_18.java" title="Problem5_18.java" tooltip="Example5/src/Problem5_18.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Example5/src/Problem5_18.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="154" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HomeWork5.java" partName="HomeWork5.java" title="HomeWork5.java" tooltip="/home/gaoang/Java/Java/Example5/src/HomeWork5.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/home/gaoang/Java/Java/Example5/src/HomeWork5.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -103,35 +59,6 @@
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
-</view>
-<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
-<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
-<customFilters userDefinedPatternsEnabled="false">
-<xmlDefinedFilters>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
-<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
-</xmlDefinedFilters>
-</customFilters>
-</viewState>
 </view>
 <view id="org.eclipse.ui.internal.introview" partName="Welcome">
 <viewState>
@@ -272,7 +199,6 @@
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
@@ -288,15 +214,13 @@
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@61b40f8c" ratio="0.89105856" ratioLeft="867" ratioRight="106" relationship="2" relative="left">
@@ -309,7 +233,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.1448718" ratioLeft="113" ratioRight="667" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.28608248" ratioLeft="222" ratioRight="554" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.58980584" ratioLeft="486" ratioRight="338" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -342,162 +266,170 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RaceCondition/src/MyRaceCondition.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Examples_4/problem4_15.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_4.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_5.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_6.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_7.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Problem5_16.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Example5_17.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/Problem5_18.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Example5/src/HomeWork5.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Examples_4/problem4_15.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Examples_4/Use.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" path="/Examples_4/Rect.class"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" uri="file:/home/gaoang/Java/Java/Example5/src/HomeWork5.java"/>
 </editors>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="409" y="0"/>
+<item historyLabel="MyRaceCondition.java" index="0">
+<position info="not_deleted" x="485" y="0"/>
 </item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="191" y="1"/>
+<item historyLabel="problem4_15.java" index="1">
+<position info="not_deleted" x="407" y="0"/>
 </item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="418" y="0"/>
+<item historyLabel="Example5_2.java" index="2">
+<position info="not_deleted" x="362" y="0"/>
 </item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="47" y="0"/>
+<item historyLabel="Example5_4.java" index="3">
+<position info="not_deleted" x="300" y="0"/>
 </item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="418" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="409" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="297" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="321" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="402" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
-<position info="not_deleted" x="644" y="0"/>
-</item>
-<item historyLabel="Example5_5.java" index="0">
+<item historyLabel="Example5_5.java" index="4">
 <position info="not_deleted" x="642" y="0"/>
 </item>
-<item historyLabel="Example5_6.java" index="1">
-<position info="not_deleted" x="41" y="0"/>
-</item>
-<item historyLabel="Example5_6.java" index="1">
-<position info="not_deleted" x="204" y="0"/>
-</item>
-<item historyLabel="Example5_6.java" index="1">
+<item historyLabel="Example5_6.java" index="5">
 <position info="not_deleted" x="256" y="0"/>
 </item>
-<item historyLabel="Example5_7.java" index="2">
-<position info="not_deleted" x="20" y="0"/>
-</item>
-<item historyLabel="Example5_7.java" index="2">
-<position info="not_deleted" x="432" y="0"/>
-</item>
-<item historyLabel="Example5_7.java" index="2">
-<position info="not_deleted" x="432" y="0"/>
-</item>
-<item historyLabel="Example5_7.java" index="2">
-<position info="not_deleted" x="274" y="0"/>
-</item>
-<item historyLabel="Example5_7.java" index="2">
-<position info="not_deleted" x="307" y="0"/>
-</item>
-<item historyLabel="Example5_7.java" index="2">
+<item historyLabel="Example5_7.java" index="6">
 <position info="not_deleted" x="438" y="0"/>
 </item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="555" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="24" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="231" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="257" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="260" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="272" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="266" y="5"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="Problem5_16.java" index="3">
+<item historyLabel="Problem5_16.java" index="7">
 <position info="not_deleted" x="8" y="0"/>
 </item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="428" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="280" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="317" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="212" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="633" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="532" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
-<position info="not_deleted" x="562" y="0"/>
-</item>
-<item historyLabel="Example5_17.java" index="4">
+<item historyLabel="Example5_17.java" index="8">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="337" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="47" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="791" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="59" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="136" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="678" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="482" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="623" y="0"/>
+<item historyLabel="problem4_15.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
+<item historyLabel="Example5_17.java" index="8">
+<position info="not_deleted" x="640" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="Example5_17.java" index="8">
+<position info="not_deleted" x="640" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="Use.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="Rect.class" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="problem4_15.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
 <position info="not_deleted" x="255" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="283" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="678" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="304" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="309" y="0"/>
 </item>
-<item historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="566" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="327" y="0"/>
 </item>
-<item active="true" historyLabel="Problem5_18.java" index="5">
-<position info="not_deleted" x="682" y="0"/>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="678" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="407" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="408" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="354" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="373" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="424" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="535" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="143" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="189" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="176" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="674" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="9">
+<position info="not_deleted" x="791" y="0"/>
+</item>
+<item historyLabel="HomeWork5.java" index="13">
+<position info="not_deleted" x="804" y="0"/>
+</item>
+<item active="true" historyLabel="HomeWork5.java" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -519,6 +451,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HomeWork5.java" tooltip="/home/gaoang/Java/Java/Example5/src/HomeWork5.java">
+<persistable uri="file:/home/gaoang/Java/Java/Example5/src/HomeWork5.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Rect.class" tooltip="Examples_4/Rect.class">
+<persistable path="/Examples_4/Rect.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Use.java" tooltip="Examples_4/Use.java">
+<persistable path="/Examples_4/Use.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="problem4_15.java" tooltip="Examples_4/problem4_15.java">
+<persistable path="/Examples_4/problem4_15.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HomeWork5.java" tooltip="Example5/src/HomeWork5.java">
+<persistable path="/Example5/src/HomeWork5.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_11.java" tooltip="Example5/src/Example5_11.java">
+<persistable path="/Example5/src/Example5_11.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StringBuffer.java" tooltip="Example5/src/StringBuffer.java">
+<persistable path="/Example5/src/StringBuffer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_8.java" tooltip="Example5/src/Example5_8.java">
+<persistable path="/Example5/src/Example5_8.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Problem5_18.java" tooltip="Example5/src/Problem5_18.java">
 <persistable path="/Example5/src/Problem5_18.java"/>
 </file>
@@ -539,30 +495,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_4.java" tooltip="Example5/src/Example5_4.java">
 <persistable path="/Example5/src/Example5_4.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example5_2.java" tooltip="Example5/src/Example5_2.java">
-<persistable path="/Example5/src/Example5_2.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="problem4_15.java" tooltip="Examples_4/problem4_15.java">
-<persistable path="/Examples_4/problem4_15.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRaceCondition.java" tooltip="RaceCondition/src/MyRaceCondition.java">
-<persistable path="/RaceCondition/src/MyRaceCondition.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Mark.java" tooltip="Examples_4/Mark.java">
-<persistable path="/Examples_4/Mark.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Use.java" tooltip="Examples_4/Use.java">
-<persistable path="/Examples_4/Use.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test2.java" tooltip="Examples_4/Test2.java">
-<persistable path="/Examples_4/Test2.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test1.java" tooltip="Examples_4/Test1.java">
-<persistable path="/Examples_4/Test1.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example4_37.java" tooltip="Examples_4/Example4_37.java">
-<persistable path="/Examples_4/Example4_37.java"/>
 </file>
 </mruList>
 </workbench>

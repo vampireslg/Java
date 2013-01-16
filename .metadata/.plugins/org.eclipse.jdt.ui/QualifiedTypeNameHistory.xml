@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.awt.BufferCapabilities"/>
 <fullyQualifiedTypeName name="java.awt.Button"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="B"/>
 <fullyQualifiedTypeName name="A"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -18,4 +17,8 @@
 <fullyQualifiedTypeName name="CommonDivisor"/>
 <fullyQualifiedTypeName name="CommonMutiple"/>
 <fullyQualifiedTypeName name="CommonMultiple"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="StringBuffer"/>
+<fullyQualifiedTypeName name="Aux"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
