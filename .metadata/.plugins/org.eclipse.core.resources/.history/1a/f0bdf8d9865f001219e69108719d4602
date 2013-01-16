@@ -1,0 +1,11 @@
+public class Example5_11 {
+	public static void main(String[] args) {
+		StringBuffer s = new StringBuffer("I");
+		System.out.println(s);
+		int size=s.capacity();
+		System.out.println(size);
+		s.insert(1, " wish");
+		System.out.println(s);
+		s.setCharAt(1, *)
+	}
+}

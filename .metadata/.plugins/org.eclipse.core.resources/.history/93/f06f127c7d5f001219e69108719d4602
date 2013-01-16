@@ -1,0 +1,22 @@
+
+public class Example5_8 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char c[],d[];
+		String s="IWishYouHaveTheSameFeelingAsMine ";
+		c=new char[30];
+		s.getChars(5, 32, c,0);
+		System.out.println(c);
+		d=new char[s.length()];
+		s.getChars(5, 8, d, 0 );
+		s.getChars(0, 1, d, 5);
+		s.getChars(1, 5, d, 1);
+		s.getChars(8, 32, d, 8);
+		System.out.println(d);
+	}
+
+}

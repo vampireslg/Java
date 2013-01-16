@@ -1,0 +1,10 @@
+
+public class HomeWork5 {
+public static void main(String[] args) {
+	int k=3;
+	solver_1(k);
+}
+public static void solver_1(String str){
+	System.out.println(String toUpperCase(str));
+}
+}

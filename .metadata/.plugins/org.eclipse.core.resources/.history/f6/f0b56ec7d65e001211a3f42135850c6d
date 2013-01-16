@@ -1,0 +1,23 @@
+class CommonDivisor{
+	public int getMaxCommon Dovisor(int m, int n){
+		if (m<n){
+			int temp=0;
+			temp=m;
+			m=n;
+			n=temp;
+		}
+		r=m%n;
+		while(r!=0){
+			m=n;
+			n=r;
+			r=m%n;
+		}
+		return n;
+	}
+}
+public class Problem5_18 {
+	public static void main(String[] args) {
+		CommonDivisor cDivisor=new CommonDivisor();
+		cDivisor.getMaxCommon(24,36);
+	}
+}

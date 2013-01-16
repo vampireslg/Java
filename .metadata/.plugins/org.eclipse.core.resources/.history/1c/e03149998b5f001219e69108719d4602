@@ -1,0 +1,10 @@
+
+public class HomeWork5 {
+public static void main(String[] args) {
+	int k=3;
+	f(k);
+}
+void f(int n){
+	System.out.println(n);
+}
+}

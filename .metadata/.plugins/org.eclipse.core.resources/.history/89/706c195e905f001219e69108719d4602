@@ -1,0 +1,26 @@
+public class HomeWork5 {
+	public static void main(String[] args) {
+		int k = 3;
+		String str = "Welcome to Imperial Court.";
+		solver_1(str);
+	}
+
+	public static void solver_1(String str){
+	char auxSet[];
+	auxSet=new char[str.length()];
+	str.getChars(0, str.length()-1, auxSet, 0);
+	for(int i=0; i<str.length(); i++){
+		if(lowCase(auxSet[i])){
+			String auxstr=String.valueOf(auxSet[i]);
+			auxSet[i]=auxstr.toUpperCase();
+		}
+	}
+	
+}
+	public static boolean lowCase(char cr){
+		if(cr<='z'&&cr>='a')
+			return true;
+		else 
+			return false;
+	}
+}

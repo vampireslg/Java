@@ -1,0 +1,11 @@
+class MyException extends Exception{
+	String message;
+	public MyException() {
+		// TODO Auto-generated constructor stub
+		meaasge="Exception: Probably uimproper actions occured !"
+	}
+	return message;
+}
+public class Example5_17 {
+
+}

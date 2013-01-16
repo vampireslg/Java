@@ -1,0 +1,19 @@
+
+public class Example5_4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String path="C:\\myfile\\2000\\result.txt";
+		int index=path.lastIndexOf("\\");
+		String fileName=path.substring(index+1);
+		String newName=fileName.replaceAll(".tet",".java");
+		System.out.println(path);
+		System.out.println(fileName);
+		System.out.println(newName);
+		System.out.println(index);
+	}
+
+}

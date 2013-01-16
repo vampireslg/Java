@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+class: Test1 Test2
+Created-By: 1.7

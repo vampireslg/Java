@@ -1,0 +1,23 @@
+class MyException extends Exception{
+	String message;
+	public MyException() {
+		// TODO Auto-generated constructor stub
+		meaasge="Exception: Probably uimproper actions occured !"
+	}
+	return message;
+}
+class Student{
+	public void speak(int m)throws MyException{
+		if(m>1000){
+			MyException exception=new MyException();
+			throw exception;
+		}
+		else 
+			System.out.println(m);
+	}
+}
+public class Example5_17 {
+	Student student=new Student();
+	student.speak(100);
+
+}

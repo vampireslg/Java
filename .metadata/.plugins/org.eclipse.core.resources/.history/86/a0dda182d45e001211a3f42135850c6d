@@ -1,0 +1,10 @@
+class MyException extends Exception{
+	String message;
+	public MyException() {
+		// TODO Auto-generated constructor stub
+		meaasge=""
+	}
+}
+public class Example5_17 {
+
+}

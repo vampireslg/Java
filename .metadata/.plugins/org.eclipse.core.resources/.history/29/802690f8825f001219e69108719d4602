@@ -1,0 +1,6 @@
+public class Example5_11 {
+	public static void main(String[] args) {
+		StringBuffer s = new StringBuffer("I won't say that .");
+		System.out.println(s);
+	}
+}

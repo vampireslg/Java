@@ -1,0 +1,18 @@
+class A{
+	public void f(){
+		int startPoint;
+		int endPoint;
+		char cStart='α',cEnd='ω';
+		startPoint=cStart;
+		endPoint=cEnd;
+		System.out.println("GeekAlphabet: ");
+		for(int i=startPoint;i<=endPoint){
+			char c ;
+			c=(char)i;
+			System.out.println(" "+c);
+		}
+	}
+}
+public class Problem5_16 {
+
+}
