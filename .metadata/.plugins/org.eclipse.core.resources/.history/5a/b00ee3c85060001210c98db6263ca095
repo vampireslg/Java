@@ -1,0 +1,16 @@
+import java.math.*;
+public class Example6_5 {
+	public static void main(String[] args) {
+		BigInteger 	sum=new BigInteger("0"),
+					fac=new BigInteger("1"),
+					ONE=new BigInteger("1"),
+					i=fac,
+					end=new BigInteger("30");
+				
+		while(i.compareTo(end)<0){
+			sum=sum.add(fac);
+			i=i.add(ONE);
+			fac=fac.multiply(i);
+		}
+	}
+}

@@ -1,0 +1,12 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class Example6_1 {
+	public static void main(String[] args) {
+		Date nowTime=new Date();
+		System.out.println(nowTime);
+		SimpleDateFormat matter1=new SimpleDateFormat("'time': 'Year': yyyy' Month':MM 'Day':dd 'Week': E");
+		System.out.println(matter1.format(nowTime));
+		System.out.println(new Date(System.currentTimeMillis()));
+	}
+}

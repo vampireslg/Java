@@ -1,0 +1,11 @@
+public class Work5 {
+	public static void concatString(String str1, String str2) {
+		String str = str1.concat(str2);
+		System.out.println(str);
+	}
+
+	public static void main(String[] args) {
+		String s1 = "Hello Sister ";
+		String s2 = ", Xiuzi", s3;
+	}
+}

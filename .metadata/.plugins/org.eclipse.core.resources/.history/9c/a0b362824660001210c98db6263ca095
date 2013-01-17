@@ -1,0 +1,11 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class Example6_1 {
+	public static void main(String[] args) {
+		Date nowTime=new Date();
+		System.out.println(nowTime);
+		SimpleDateFormat matter1=new SimpleDateFormat("'time": 'year'yyyy'Month'MM'Day'dd);
+		System.out.println(matter1.format(nowTime));
+	}
+}
