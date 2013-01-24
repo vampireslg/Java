@@ -1,0 +1,20 @@
+import java.util.*;
+public class Code13_5 {
+	public static void main(String[] args) {
+		Stack myStack=new Stack();
+		System.out.println(" "+1);
+		System.out.println(" "+1);
+		myStack.push(new Long(1));
+		myStack.push(new Long(1));
+		int k=1;
+		while(k<=1)
+			for(int i=1;i<=2;i++){
+				Long F1=(Long)myStack.pop();
+				Long F2=(Long)myStack.pop();
+				System.out.println(" "+F1+F2);
+				
+				
+				k++;
+			}
+	}
+}

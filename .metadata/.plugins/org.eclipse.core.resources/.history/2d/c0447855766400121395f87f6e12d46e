@@ -1,0 +1,28 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.Timer;
+
+public class Example9_18 {
+	public static void main(String[] args) {
+		TimeWin Win = new TimeWin();
+	}
+}
+class TimeWin extends Frame implements
+ActionListener{
+	TextField text;
+	Button bStart, bStop, bContinue;
+	Timer time;
+	int n=0,start=1;
+	TimeWin(){
+		time=newTimer(1000,this);
+		text=new TextField(10);
+		bStart=new Button("Time Begin ");
+		bStop=new Button("Time Over ");
+		bContinue=new Button("Time Continue ");
+		bStart.addActionListener(this);
+		bStop.addActionListener(this);
+		bContinue.addActionListener(this);
+		setLayout(new FlowLayout());
+		
+	}
+}

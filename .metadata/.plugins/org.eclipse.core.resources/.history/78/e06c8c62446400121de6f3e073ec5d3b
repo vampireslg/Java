@@ -1,0 +1,31 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Example9_17 {
+	public static void main(String[] args) {
+		Win win = new Win();
+	}
+}
+
+class Win extends Frame implements
+Runnable, ActionListener{
+	Thread moveOrStop;
+	Button start, suspend, revive, terminate;
+	Label moveLabel;
+	boolean move=false, die=false;
+	Win(){
+		moveOrStop=new Thread(this);
+		start=new Button("Thread start");
+		suspend=new Button("Thread suspend");
+		revive =new Button("Thread revive");
+		terminate=new Button("Thread terminate");
+		start.addActionListener(this);
+		suspend.addActionListener(this);
+		revive.addActionListener(this);
+		terminate.addActionListener(this);
+		moveLabel=new Label("I am moving !");
+		setLayout(new FlowLayout());
+		add(start);add(suspend);add(revive);add(terminate);
+		add(moveLabel);
+	}
+}
