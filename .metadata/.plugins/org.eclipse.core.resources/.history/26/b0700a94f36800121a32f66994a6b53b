@@ -1,0 +1,14 @@
+import java.util.*;
+public class Code13_6 {
+	public static void main(String[] args) {
+		TreeSet mytree=new TreeSet();
+		mytree.add("boy");
+		mytree.add("Just");
+		mytree.add("what");
+		mytree.add("Hell");
+		Iterator te=mytree.iterator();
+		while(te.hasNext()){
+			System.out.println(" " +te.next());
+		}
+	}
+}

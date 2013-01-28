@@ -51,4 +51,10 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="Student"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="javax.swing.text.ElementIterator"/>
+<fullyQualifiedTypeName name="java.util.RandomAccess"/>
+<fullyQualifiedTypeName name="Figureout"/>
+<fullyQualifiedTypeName name="Element"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,19 @@
+import java.util.*;import java.awt.*;
+public class Code13_7 {
+	public static void main(String[] args) {
+	    TreeSet mytree=new TreeSet(new Comparator()){
+		    public int compare(Object a, Object b){
+			Student stu1=new (Student) a;
+			Student stu2=new (Student) b;
+			return stu1.compareTo(stu2);
+		    }
+		});
+
+    Student st1,st2,st3,st4;
+    st1=new Student(90,"StudentA");
+    st2=new Student(90,"StudentA");
+    st3=new Student(90,"StudentA");
+    st4=new Student(90,"StudentA");
+    mytree.add(st1);
+    
+
