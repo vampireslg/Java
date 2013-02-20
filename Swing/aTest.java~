@@ -1,0 +1,11 @@
+import javax.swing.*;
+import net.*;
+
+public class aTest{
+    public void main(String[] args){
+	JFrame f=new JFrame("New Label");
+
+	SwingConsole sc=new SwingConsole();
+	
+    }
+}

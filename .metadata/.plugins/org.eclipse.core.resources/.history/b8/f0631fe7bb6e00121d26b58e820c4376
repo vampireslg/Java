@@ -1,0 +1,6 @@
+import simple.*;
+public class aTest {
+	public static void main(String[] args) {
+		Vector vc=new Vector();
+	}
+}

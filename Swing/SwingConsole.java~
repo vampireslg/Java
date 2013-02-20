@@ -1,0 +1,13 @@
+package net.mindview.util;
+import java.swing.*;
+
+public class SwingConsole{
+    public static viod run(final JFrame f, final int width, final int height){
+	SwingUtilities.invokeLater(new Runnable(){
+		f.setTitle(f.getClass().getSimpleName());
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSeze(width,height);
+		f.setVisible(true);
+	    }
+	    });
+}

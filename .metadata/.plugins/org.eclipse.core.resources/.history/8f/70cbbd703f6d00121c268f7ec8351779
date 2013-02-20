@@ -1,0 +1,15 @@
+import java.util.*;
+public class Code_10 {
+	public static void main(String[] args) {
+		Integer one=new Integer(1),
+				two=new Integer(2),
+				three=new Integer(3),
+				four=new Integer(4),
+				five=new Integer(5),
+				six=new Integer(6),
+		HashSet setA=new HashSet<>(),
+				setB=new HashSet<>();
+		
+	}
+
+}

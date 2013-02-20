@@ -1,0 +1,48 @@
+import javax.swing.*;
+import javax.swing.text.*;
+import java.awt.event.*;
+import java.awt.*;
+public class digitDocument{
+    public static void main(String[] args){
+	new Win();
+    }
+}
+
+class DigitDocument extends PlainDocument{
+    int count=1;
+    public void insertString(int offset, String s, AttributeSet a){
+	char c=s.charAt(0);
+	if(c<='9'&&c>='0'&&count <=8){
+	    try{super.insetString(offset,s,a);
+		count++;
+	    }
+	    catch(BadLocationException e){}
+	}
+    }
+    public void remove(int offset, int length){
+	try{
+	    super.remove(offset, length);
+	}catch(BadLocationException e){}
+    }
+
+}
+class Win extends JFrame{
+    JtextField text;
+    DigitDocument document;
+    public Win(){
+	setBounds(300,200,100,100);
+	setVisible(true);
+	text=new JtextField(20);
+	Container con=getContentPane();
+	con.setLayout(new FlowLayout());
+	document=new DigitDocument();
+	text.setDocument(document);
+	con.add(text);
+	text.requestFocus();
+	con.validate();
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
+	
+	 
+	
