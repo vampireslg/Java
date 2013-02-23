@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pecan" default="all">
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="ant-contrib.jar"/>
+        </classpath>
+    </taskdef>
+	
+	<!--
+	example.Example
+	account.Bank
+	boundedbuffer.BufferNotify
+	rstack.BufferPool
+	clap1.TestMain
+	message.Main
+	
+	example2.ExampleTwo
+	benchmarks.dstest.ArrayListDeadlockTest
+	benchmarks.raytracer.RayTracer
+	weblech.ui.TextSpider
+	benchmarks.hedc.Tester
+	benchmarks.JGFRayTracerBenchSizeA
+	JGFRayTracerBenchSizeA
+	benchmarks.dstest.TreeSetTest
+	benchmarks.dstest.HashSetTest
+	benchmarks.dstest.LinkedListTest
+	benchmarks.dstest.ArrayListTest
+	benchmarks.stringbuffer.StringBufferTest
+	
+	ftpserver290.TestFTP
+	org.apache.ftpserver.commandline.CommandLine
+	-->
+	
+	<property name="pecan.main.class" value="edu.hkust.clap.Main"/>
+	<property name="pecan.engine.main.class" value="edu.hkust.clap.engine.EngineMain"/>
+	<property name="pecan.replay.driver.main.class" value="replaydriver.ReplayDriver"/>
+	<property name="project.home.dir" location="."/>
+	<property name="srcdir" location="./app"/>
+	<property name="builddir" location="./app"/>
+	<property name="file.list" value="1,2,3,4,5,6,7,8,9,10"/>
+
+	 <target name="compile-source">
+	    	 <stopwatch name="timer" action="start"/>
+			<input
+			    message="Please enter your app main class name:"
+			    addproperty="test.main.class"
+			  />
+	 	<javac srcdir="${srcdir}"
+	 	         destdir="${builddir}"
+	 	         debug="on"
+	 	  />
+
+	         <stopwatch name="timer" action="total"/>
+	</target>
+	
+	 <target name="compile-replaydriver">
+	    	 <stopwatch name="timer" action="start"/>
+	 	<javac srcdir="src/" destdir="tmp/" 
+		debug="on">
+	 		<classpath><path refid="clap.replay.driver.path"/></classpath>
+	 		  </javac>
+	         <stopwatch name="timer" action="total"/>
+	</target>
+
+	
+	<target name="all" depends="transform,collect-trace,compile-replaydriver,patternsearch,re-execute">
+		
+	</target>
+	
+	
+	 <target name="transform" depends="compile-source">
+	    	 <stopwatch name="timer" action="start"/>
+	    	 <java classname="${pecan.main.class}" fork="true" maxmemory="15000m">
+	    	 		<arg value="${test.main.class}"/>
+		            <classpath>
+		            	<path refid="clap_inst_class_path"/>
+		            </classpath>
+	    	 </java>
+	 	<delete includeemptydirs="true">
+	 	    <fileset dir="${project.home.dir}/tmp/runtime/edu" includes="**/*"/>
+	 	  </delete>
+	 	<delete includeemptydirs="true">
+	 		 	    <fileset dir="${project.home.dir}/tmp/replay/edu" includes="**/*"/>
+	 		 	  </delete>
+	         <stopwatch name="timer" action="total"/>
+	   </target>
+	
+	 <target name="collect-trace" depends="transform">
+	    	 <stopwatch name="timer" action="start"/>
+	    	 <java classname="${pecan.main.class}" fork="true" maxmemory="15000m">
+	    	 		<arg value="${test.main.class}"/>
+		            <classpath>
+		            	<path refid="clap_monitor_class_path"/>
+		            </classpath>
+	    	 </java>
+	         <stopwatch name="timer" action="total"/>
+	   </target>
+	
+	 <target name="patternsearch" depends="collect-trace">
+	    	 <stopwatch name="timer" action="start"/>
+	    	 <java classname="${pecan.engine.main.class}" fork="true" maxmemory="15000m">
+		            <classpath>
+	    	 	<pathelement location= "${project.home.dir}/pecan-engine.jar"/>
+		           </classpath>
+	    	 </java>
+	         <stopwatch name="timer" action="total"/>
+	   </target>
+
+	 <target name="re-execute" depends="compile-replaydriver,collect-trace">
+	    	 <stopwatch name="timer" action="start"/>
+	 	<for param="number" list="${file.list}">
+	 		<sequential>
+	 			    	<java classname="${pecan.replay.driver.main.class}" fork="true" maxmemory="15000m">
+	 			    	 	<arg value="@{number}"/>
+	 			    		
+	 							<classpath>
+	 				    	            	<path refid="clap_replay_class_path"/>
+	 				    	            </classpath>
+	 			    	</java>
+	 			    				  </sequential>
+	 			    				</for>
+	 			    				<stopwatch name="timer" action="total"/>
+	 			    				<echo message="run: ${timer}"/>
+	   </target>
+
+	   <target name="run-once">    			
+	    	    	<java classname="${pecan.replay.driver.main.class}" fork="true" maxmemory="15000m">
+	    	    	 	<arg value="${file.number}"/>
+	    	            <classpath>
+	    	            	<path refid="clap_monitor_class_path"/>
+	    	            </classpath>
+	    	        </java>        	
+	   </target>
+	
+    <path id="clap_inst_class_path">
+    	<pathelement location="${project.home.dir}/app/"/>
+    	<pathelement location="${project.home.dir}/pecan-instrumentor.jar"/>
+     </path>
+	
+    <path id="clap_monitor_class_path">
+    	<pathelement location="${project.home.dir}/tmp/runtime/"/>
+    	<pathelement location="${project.home.dir}/pecan-monitor.jar"/>
+     </path>
+    <path id="clap_replay_class_path">
+    	<pathelement location="${project.home.dir}/tmp/"/>
+    	<pathelement location="${project.home.dir}/tmp/replay/"/>
+    	<pathelement location="${project.home.dir}/pecan-replayer.jar"/>
+     </path>
+    <path id="clap.replay.driver.path">
+    	<pathelement location="${project.home.dir}/app/"/>
+    	<pathelement location="${project.home.dir}/pecan-replayer.jar"/>
+     </path>
+</project>
+

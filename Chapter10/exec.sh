@@ -1,0 +1,2 @@
+javac Code10_20.java
+java Code10_20

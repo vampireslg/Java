@@ -1,0 +1,12 @@
+
+public class DataRace {
+	public static void main(String[] args) {
+		Process pro=new Process();
+		pro.setNum=10;
+		pro.thread1.start();
+		pro.thread2.start();");
+	}
+	public void run() {
+		
+	}
+}

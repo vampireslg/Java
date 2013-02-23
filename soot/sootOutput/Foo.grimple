@@ -1,0 +1,38 @@
+public class Foo extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        Foo r0;
+
+        r0 := @this: Foo;
+        r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        Foo r2;
+        byte b0, b1;
+        int i2;
+
+        r0 := @parameter0: java.lang.String[];
+        r2 = new Foo();
+        b0 = 7;
+        b1 = 14;
+        i2 = (r2.<Foo: int bar(int)>(21) + b0) * b1;
+        <java.lang.System: java.io.PrintStream out>.<java.io.PrintStream: void println(java.lang.String)>("-----------\n");
+        return;
+    }
+
+    public int bar(int)
+    {
+        Foo r0;
+        int i0;
+
+        r0 := @this: Foo;
+        i0 := @parameter0: int;
+        return i0 + 42;
+    }
+}

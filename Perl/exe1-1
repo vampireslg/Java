@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+#GoodBye World.
+print "Goodbye Cruel World\n";
+@lines = `perldoc -u -f atan2`;
+foreach (@line){
+    s/\w<([^>]+)>/\U$1/g;
+    print;
+}

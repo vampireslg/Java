@@ -1,0 +1,18 @@
+
+*** Violation Patterns [ID - Memory Location - Line Number - Thread - Access Type] ***
+
+--------------------------------------
+
+-------------------------------------
+
+Number of Threads: 3
+Number of Shared Variables: 0
+Number of Lock Nodes: 0
+Number of Message Nodes: 6
+Number of Non-Method Entry/Exit Nodes: 6
+Number of Read/Write Nodes: 0
+Number of Total Nodes: 16
+
+Number of Races: 0
+Number of Atomicity Violations: 0
+Number of ASVs: 0

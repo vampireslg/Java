@@ -1,0 +1,2 @@
+javac copyFile.java
+java copyFile

@@ -1,0 +1,22 @@
+
+*** Violation Patterns [ID - Memory Location - Line Number - Thread - Access Type] ***
+
+--------------------------------------
+
+*** AV-I --- "stringbuffer.StringBuffer.count" --- 33 144 9 READ * 57 667 10 WRITE * 40 327 9 READ ***
+
+*** Apply Transformation >>> 1: *** AV-I --- "stringbuffer.StringBuffer.count" --- 33 144 9 READ * 57 667 10 WRITE * 40 327 9 READ ***
+
+-------------------------------------
+
+Number of Threads: 3
+Number of Shared Variables: 5
+Number of Lock Nodes: 16
+Number of Message Nodes: 6
+Number of Non-Method Entry/Exit Nodes: 59
+Number of Read/Write Nodes: 37
+Number of Total Nodes: 97
+
+Number of Races: 0
+Number of Atomicity Violations: 1
+Number of ASVs: 0

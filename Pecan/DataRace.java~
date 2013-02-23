@@ -1,0 +1,41 @@
+
+public class DataRace {
+	public static void main(String[] args) {
+		Process pro=new Process();
+		pro.setNum=10;
+		pro.thread1.start();
+		pro.thread2.start();
+	}
+}
+class Process implements new Runnable() {
+	private number=0;
+	Thread thread1, thread2;
+	Process(){
+		thread1=new Thread(this);
+		thread1.setName("Thread1");
+		thread2=new Thread(this);
+		thread2.setName("Thread2");
+	}
+    public void setNum(int mount){
+	number=mout;
+    }
+    public void run() {
+	while(true){
+	    number=nunber+1;
+	    if (Thread.currentThread()=thread1){
+		System.out.println("I am thread 1, number remains : " + number);
+		if(number > 20){
+		    System.out.println(thread1.getName() + " is a dead thread "):
+		    return;
+		}
+	    }
+	    else if (Thread.currentThread()=thread1){
+		System.out.println("I am thread 1, number remains : " + number);
+		if(number > 20){
+		    System.out.println(thread1.getName() + " is a dead thread "):
+		    return;
+		}
+	    } 
+	    
+	}
+}
