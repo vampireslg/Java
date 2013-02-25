@@ -19,7 +19,6 @@ public class CircularWSDeque{
 	return preCond;
     }
 
-
 }
 
 class CircularArray{

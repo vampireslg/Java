@@ -1,2 +1,2 @@
 javac CircularWSDeque.java
-java CircularWSDeque
+#java CircularWSDeque
