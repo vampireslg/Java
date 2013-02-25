@@ -1,0 +1,19 @@
+import java.io.*;
+
+public class euler_11{
+    public static void main(String[] args){
+	int set[][]=new set[20][20];
+	try{
+	    BufferedReader f=new BufferedReader("euler_11.txt");
+	    String[] contents=null;
+	    String line=null;
+	    int l=0;
+	    while((line=f.readLine)!=null){
+		contents = line.split(" ");
+		for(int i=0; i<contents.length; i++){
+		    set[l][i]=contents[i];
+		}
+		l++;
+	    }
+    }
+}

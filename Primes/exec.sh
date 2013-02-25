@@ -1,5 +1,5 @@
-javac Miller_Rabin_32.java 
-java Miller_Rabin_32
-head mrprimes.txt
+javac Miller_Rabin_64.java 
+java Miller_Rabin_64
+#head mrprimes.txt
 #javac prime.java
 #java prime

@@ -1,0 +1,4 @@
+12345Gbye,Cruel World
+234
+0.98
+true
