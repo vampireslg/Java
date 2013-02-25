@@ -49,6 +49,23 @@ public class CircularWSDeque{
 	}
 	if(!casTop(t, t+1))
 	    o = Empty;
+	this.bottom = t+1;
+	return o;
+    }
+
+    void perhapsShrink(long b, long t){
+	CircularArray a = this.activeArray;
+	if(b - t < a.size()/4){
+	    CircularArray aa = a.shrink(b, t);
+	    this.activeArray = aa;
+	    long ss = aa.size();
+	    this.bottom = b + ss;
+	    t = this.top;
+	    if(!casTop(t, t+ss))
+	       this.bottom = b;
+	    a.free();
+	}
+    }
 	    
 
 }
