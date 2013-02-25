@@ -4,7 +4,7 @@ public class CircularWSDeque{
     public final static Object Empty=new Object();
     public final static Object Abort=new Object();
 
-    private final static int LogInitialSize = 64;
+    private final static long LogInitialSize = 10;
     private volatile long bottom = 0;
     private volatile long top = 0 ;
     private volatile CircularArray activeArray = new CircularArray(LogInitialSize);
@@ -63,37 +63,58 @@ public class CircularWSDeque{
 	    t = this.top;
 	    if(!casTop(t, t+ss))
 	       this.bottom = b;
-	    a.free();
+	    //gita.free();
 	}
     }
-	    
-
-}
-
-class CircularArray{
-    private int log_size;
-    private Object[] segment;
-
-    CircularArray(int log_size){
-	this.log_size = log_size;
-	this.segment = new Object[1<<this.log_size];
-    }
-    long size(){
-	return 1<<this.log_size;
-    }
-    Object get(long i){
-	return this.segment[i % size()];
-    }
-    void put(long i, Object o){
-	this.segment[i % size()] = o;
-    }
-    CircularArray grow(long b, long t){
-	CircularArray a = new CircularArray(this.log_size+1);
-	for(long i=t; i<b; i++)
-	    a.put(i, this.get(i));
-	return a;
+    public Object steal(){
+	long t = this.top;
+	CircularArray oldArr = this.activeArray;
+	long b = this.bottom;
+	CircularArray a = this.activeArray;
+	long size = b - t;
+	if(size <= 0)
+	    return Empty;
+	if ((size % a.size()) == 0){
+	    if(oldArr == a && t == this.top)
+		return Empty;
+	    else return Abort;
+	}
+	Object o = a.get(t);
+	if(!casTop(t,t+1))
+	    return Abort;
+	return o;
     }
 }
+    class CircularArray{
+	private long log_size;
+	private Object[] segment;
+
+	CircularArray(long log_size){
+	    this.log_size = log_size;
+	    this.segment = new Object[1<<this.log_size];
+	}
+	long size(){
+	    return 1<<this.log_size;
+	}
+	Object get(long i){
+	    return this.segment[i % size()];
+	}
+	void put(long i, Object o){
+	    this.segment[i % size()] = o;
+	}
+	CircularArray grow(long b, long t){
+	    CircularArray a = new CircularArray(this.log_size+1);
+	    for(long i=t; i<b; i++)
+		a.put(i, this.get(i));
+	    return a;
+	}
+	CircularArray shrink(long b, long t){
+	    CircularArray a = new CircularArray(this.log_size-1);
+	    for(long i=t; i < b ; i++)
+		a.put(i,this.get(i));
+	    return a;
+	}
+    }
 
 
     
