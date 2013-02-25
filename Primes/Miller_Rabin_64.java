@@ -4,6 +4,7 @@ import static Package.print.Print.*;
 
 public class Miller_Rabin_64{
     public static void main(String[] args){
+	long startTime=System.currentTimeMillis();
 	/*System.out.println(modular_exponent_64(2,36,37));
 	System.out.println(modular_exponent_64(2,18,37));
 	System.out.println(modular_exponent_64(2,9,37));
@@ -14,8 +15,7 @@ public class Miller_Rabin_64{
 	long counter = how_many_primes((long)100);
 	boolean isPrime= miller_rabin_64(num_under_tes);
 	System.out.println("Valar Morghulis ; \nValar Dohaeris : \n"+isPrime);
-	System.out.println(modular_long(17, 500, 13));
-
+	
 	try{
 	    RandomAccessFile out=new RandomAccessFile("mrprimes.txt", "rw");
 	    FileOutputStream fos=new FileOutputStream("mrprimes.txt");
@@ -33,6 +33,9 @@ public class Miller_Rabin_64{
 	    //}
 	    out.close();
 	}catch(IOException e){}
+
+	long endTime=System.currentTimeMillis();
+	print(">>>\nTimeConsumed: "+ (endTime-startTime)/1000 +" s\n>>>");
     }
 	
 

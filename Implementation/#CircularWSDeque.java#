@@ -1,0 +1,82 @@
+import java.util.concurrent.*;
+
+public class CircularWSDeque{
+    public final static Object Empty=new Object();
+    public final static Object Abort=new Object();
+
+    private final static int LogInitialSize = 64;
+    private volatile long bottom = 0;
+    private volatile long top = 0 ;
+    private volatile CircularArray activeArray = new CircularArray(LogInitialSize);
+
+    private boolean casTop(long oldVal, long newVal){
+	boolean preCond;
+	synchronized (this){
+	    preCond = (top==oldVal);
+	    if (preCond)
+		top=newVal;
+	}
+	return preCond;
+    }
+    public void pushBottom(Object o){
+	long b = this.bottom;
+	long t = this.top;
+	CircularArray a = this.activeArray;
+	long size = b - t ;
+	if(size > a.size()-1){
+	    a = a.grow(b, t);
+	    this.activeArray = a;
+	}
+	a.put(b, o);
+	bottom = b + 1;
+    }
+
+    public Object popBottom(){
+	long b = this.bottom;
+	CircularArray a = this.activeArray;
+	b = b - 1 ;
+	this.bottom = b ;
+	long t = this.top;
+	long size = b - t ;
+	if(size < 0){
+	    bottom = t ;
+	    return Empty;
+	}
+	Object o = a.get(b);
+	if(size > 0){
+	    perhapsShrink(b, t);
+	    return o;
+	}
+	if(!casTop(t, t+1))
+	    o = Empty;
+	    
+
+}
+
+class CircularArray{
+    private int log_size;
+    private Object[] segment;
+
+    CircularArray(int log_size){
+	this.log_size = log_size;
+	this.segment = new Object[1<<this.log_size];
+    }
+    long size(){
+	return 1<<this.log_size;
+    }
+    Object get(long i){
+	return this.segment[i % size()];
+    }
+    void put(long i, Object o){
+	this.segment[i % size()] = o;
+    }
+    CircularArray grow(long b, long t){
+	CircularArray a = new CircularArray(this.log_size+1);
+	for(long i=t; i<b; i++)
+	    a.put(i, this.get(i));
+	return a;
+    }
+}
+
+
+    

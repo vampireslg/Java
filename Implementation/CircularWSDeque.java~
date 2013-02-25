@@ -1,0 +1,41 @@
+import java.util.concurrent.*;
+
+public class CircularWSDeque{
+    public final static Object Empty=new Object();
+    public final static Object Abort=new Object();
+
+    private final static int LogInitialSize = 64;
+    private volatile long bottom = 0;
+    private volatile long top = 0 ;
+    private volatile CircularArray activeArray = new CircularArray(LogInitialSize);
+
+    private boolean casTop(long oldVal, long newVal){
+	boolean preCond;
+	synchronized (this){
+	    preCond = (top==oldVal);
+	    if (preCond)
+		top=newVal;
+	}
+	return preCond;
+    }
+
+
+}
+
+class CircularArray{
+    private int log_size;
+    private Object[] segment;
+
+    CircularArray(int log_size){
+	this.log_size = log_size;
+	this.segment = new Object[1<<this.log_size];
+    }
+    long size(){
+	return 1<<this.log_size;
+    }
+
+
+}
+
+
+    
