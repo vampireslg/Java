@@ -11,7 +11,7 @@ public class Miller_Rabin_64{
 	int d = Integer.numberOfTrailingZeros(64);
 	System.out.println(d);
 	*/
-	long num_under_tes=10000000019l;
+	long num_under_tes=10000l;
 	long counter = how_many_primes((long)100);
 	boolean isPrime= miller_rabin_64(num_under_tes);
 	System.out.println("Valar Morghulis ; \nValar Dohaeris : \n"+isPrime);

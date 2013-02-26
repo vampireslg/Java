@@ -85,7 +85,8 @@ public class CircularWSDeque{
 	return o;
     }
 }
-    class CircularArray{
+
+class CircularArray{
 	private long log_size;
 	private Object[] segment;
 
@@ -97,10 +98,10 @@ public class CircularWSDeque{
 	    return 1<<this.log_size;
 	}
 	Object get(long i){
-	    return this.segment[i % size()];
+	    return this.segment[(int)(i % size())];
 	}
 	void put(long i, Object o){
-	    this.segment[i % size()] = o;
+	    this.segment[(int)(i % size())] = o;
 	}
 	CircularArray grow(long b, long t){
 	    CircularArray a = new CircularArray(this.log_size+1);
