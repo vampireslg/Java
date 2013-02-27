@@ -1,0 +1,78 @@
+import java.io.*;
+import static Package.print.Print.*;
+/*
+  Copy line num1--num2 of File1 to File2 below line3  
+  @copyrightL 
+*/
+
+class copyFile{
+    public static void main(String[] args){
+	
+	copy_file1_to_file2("copyFile.java",3,6,"receiver.txt",4,"receiver2.txt");
+
+    }
+    public static void  copy_file1_to_file2(String file1, int line1, int line2,
+					    String file2, long line3,String file3){
+	long startPoint=line1 , endPoint=line2;
+	long startPoint_2=line3;
+
+
+	//Copy contents from file1 ;
+	try{
+	    long lines_counter=0;
+	    RandomAccessFile contents_1=new RandomAccessFile(file1, "rw");
+	    RandomAccessFile contents_2=new RandomAccessFile(file2, "rw");
+	    long  file2_len=1+(long)contents_2.length();
+	    StringBuffer file_buffer=new StringBuffer ();
+	    String str=null;
+	    
+	    while (lines_counter<line3&&(str=contents_2.readLine())!=null){
+		file_buffer.append(str).append("\r\n");
+		lines_counter++;
+	    }
+	    
+	    lines_counter = 1;
+	    
+
+	    while(lines_counter<line1){
+		str = contents_1.readLine();
+		lines_counter++;
+	    }
+
+	    for(long i=startPoint; i<=endPoint; i++){
+		str = contents_1.readLine();
+		file_buffer.append(str).append("\r\n");
+
+	    }
+
+
+	    //Move contents below line line4 with dis (line4-line3)
+	    //to spare some space .
+	    while((str=contents_2.readLine())!=null){
+		file_buffer.append(str).append("\n\r");
+	    }
+	    print(file_buffer);	    
+	    
+	    //Get the paste done;
+	    /*BufferedReader br1 = new BufferedReader (new FileReader(file1));
+	    BufferedReader br2 = new BufferedReader (new FileReader(file2));
+	    StringBuffer contents = new StringBuffer(1024);
+	    String str=null;
+	    long line=0;
+	    while((str=br2.readLine())!=null){
+		line++;
+		contents.append(str).append("\r\n");
+	    }
+	    */
+
+	    contents_2.close();
+	    contents_1.close();
+	    
+	    BufferedWriter bw=new BufferedWriter(new FileWriter(file3));
+	    bw.write(file_buffer.toString());
+	    bw.close();
+	}catch(IOException e){}
+       
+
+    }
+}

@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.Scanner;
+import static ade.Add_Del_Exc.*;
+/*
+  SshHelper 
+  Read file by line and ADD line number ,then write it to another file .  
+  @copyrightL 
+*/
+
+class ShadowsHelper{
+    public static void main(String[] args){
+
+	copy_ins("s.s","shadowsHelper.sh");
+	
+    }
+}

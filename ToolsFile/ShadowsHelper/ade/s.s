@@ -1,0 +1,2 @@
+javac Add_Del_Exc.java
+java Add_Del_Exc

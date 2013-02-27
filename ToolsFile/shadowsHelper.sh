@@ -16,11 +16,11 @@
 #  #8 Operations to execute:
 #  exit
 #  ssh gaoang@192.168.1.30
-ssh gaoang@192.168.1.31
+#  ssh gaoang@192.168.1.31
 #  ssh gaoang@192.168.1.32
 #  ssh gaoang@192.168.1.33
 #  ssh gaoang@192.168.1.34
 #  ssh gaoang@192.168.1.35
 #  ssh gaoang@192.168.1.36
 #  clear
-#  ls
+ls

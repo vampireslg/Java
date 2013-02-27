@@ -1,0 +1,29 @@
+# Document for this file 
+1. CopyPack contains
+   copyFile : Copy contents in file 1 to another file (No System.in; Change filename on your own )
+   delFile  : Del some contents in some files (Filename and startline to endline need System.in )
+   writeContentsToFile
+		:Write contents to file : Input mode is < Contents, Filename, Location >
+
+2. Package
+   Main :
+   	PrintTest : Abbreviate System.out.println as print .
+
+
+3. ShadowsHelper
+   Main :
+   	ShadowsHelper: Copy s.s in /home/gaoang to shadowsHelper.sh in this dirctory,
+	and change ins with respect the user's need ; then exec shadowsHelper.sh(of course,
+	we have change the execute perssion of sha*.sh)
+	   This Shadowshelper.java file does nothing but cite ins from Add_Del_Exc.class under
+	   folder ade 
+
+   Additional:
+	InsertContentsToFile: This java source file served to insert <Contents> beneath <Location>
+	of /home/gaoang/s.s
+
+	ade:package , detailed implemente the ADD ins \ DEL ins \ Exc ins.
+
+		       
+   
+   
