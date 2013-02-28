@@ -1,0 +1,2 @@
+javac ct/ChatServer.java
+java ct.ChatServer

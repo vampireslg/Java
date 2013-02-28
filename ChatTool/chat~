@@ -1,0 +1,2 @@
+javac ct.Client.java
+java ct.Client
