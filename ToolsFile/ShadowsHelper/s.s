@@ -23,4 +23,4 @@ ssh gaoang@192.168.1.30
 ssh gaoang@192.168.1.31
 ssh gaoang@192.168.1.32
 ssh gaoang@192.168.1.35
-ls
+
