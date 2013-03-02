@@ -19,7 +19,7 @@ public class ChatServer{
 	try{
 	    server = new ServerSocket(PORT);
 	    exec = Executors.newCachedThreadPool();
-	    System.out.println("SERVEVISE'S ENABLED .");
+	    System.out.println("SERVEVISE'S ENABLED ...\nNow U Can Have a Chat .");
 
 	    Socket client = null;
 	    while(true){
@@ -43,7 +43,7 @@ public class ChatServer{
 	public ChatTask(Socket socket)throws IOException{
 	    this.socket = socket;
 	    br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-	    msg = "["+this.socket.getInetAddress()+"] Join In Chatroom ..";
+	    msg = "["+this.socket.getInetAddress()+"] Joined In Chatroom ..";
 	    sendMsg();
 	}
 
@@ -52,8 +52,8 @@ public class ChatServer{
 		while((msg = br.readLine())!=null){
 		    if(msg.trim().equals("-quit")){
 			list.remove(socket);
-			br.close();
 			pw.close();
+			br.close();
 			msg = "["+socket.getInetAddress() +"] 's Leaving . ";
 			socket.close();
 

@@ -13,7 +13,7 @@ public class Client{
     
     public Client(){
 	try{
-	    Socket socket = new Socket("192.168.8.14", PORT);
+	    Socket socket = new Socket("192.168.1.34", PORT);
 	    exec.execute(new SendMsg(socket));
 	    System.out.println("[" + socket.getInetAddress() + "] ' Joining ... ");
 
