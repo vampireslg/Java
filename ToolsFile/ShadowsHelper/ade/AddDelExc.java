@@ -6,7 +6,8 @@ import java.io.*;
 
 */
 public class AddDelExc{
-    //Copy instructions from a file to another 
+    //Copy instructions from a file to another
+    //Operate on Instructions
 	public static void  opeOnIns(String file,String file_copy_name){
 	    final int notesLine = 16 ;
 	    try{
@@ -14,12 +15,12 @@ public class AddDelExc{
 		RandomAccessFile contents=new RandomAccessFile(file, "rw");
 		RandomAccessFile contents_helper = new RandomAccessFile(file, "rw");
 		StringBuffer file_buffer=new StringBuffer ();
-		String str=null;
+		String str = null;
 		
-		while ((str=contents.readLine())!=null){
-		    byte b_str[]=str.getBytes();
-		    if(b_str[0] !='#'&&!(b_str[b_str.length - 1] == '!')){
-			file_buffer.append(Integer.toString(lines_counter)+". ").append(str).append("\r\n");
+		while ((str = contents.readLine())!=null){
+		    if(! (str.trim().startsWith("#") || str.trim().endsWith("!")) ){
+			file_buffer.append(String.valueOf(lines_counter)+". ").
+			    append(str).append("\n");
 			lines_counter++;
 		    }
 		}
@@ -60,8 +61,6 @@ public class AddDelExc{
 		    }
 		    lines_counter++;
 		}
-
-		
 				    
 		//Write file's contents to another file :
 		BufferedWriter bw=new BufferedWriter(new FileWriter(file_copy_name));
@@ -70,9 +69,6 @@ public class AddDelExc{
 		bw.close();	    
 		contents_helper.close();
 		contents.close();
-
-		//
-		
 	    }catch(IOException e){}
 	}
 }
