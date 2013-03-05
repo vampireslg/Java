@@ -1,26 +1,39 @@
 package dichotomy;
 import java.io.*;
+import java.util.ArrayList;
 
 public class Dichotomy{
-    static int loc = 0;
-    public static int dic(int a[], int xFactor, int left, int right){
-	int flag = (a[0] < a[1]) ? 1:0;
-	if (left > right || ((left == right) && !(a[left] == xFactor))) return loc;
-	loc = (left + right) / 2;
-	if(flag == 1){
-	    if (xFactor == a[loc])
-		return loc;
-	    else if (xFactor < a[loc])
-		return dic(a, xFactor, left , loc - 1);
-	    else
-		return dic(a, xFactor, loc+1 , right);
-	}else{
-	    if (xFactor == a[loc])
-		return loc;
-	    else if (xFactor < a[loc])
-		return dic(a, xFactor, loc + 1 , right );
-	    else
-		return dic(a, xFactor, left , loc - 1 );
+    public static int search(int arr[], int key){
+	int start = 0;
+	int end = arr.length - 1;
+	while(start <= end){
+	    int middle = (start + end) /2 ;
+	    if(key < arr[middle]){
+		end = middle -1;
+	    }else if(key > arr[middle]){
+		start = middle + 1;
+	    }
+	    else{
+		while(start < middle){
+		    int m = (start + middle) / 2;
+		    if(key <= arr[m])
+			middle = m-1;
+		    else if(key > arr[m])
+			start = m + 1;
+		    else
+			return (1+m);
+		}
+		return (1+middle);
+	    }
 	}
+	return -1;
     }
+
+    public static void print(Object obj){
+	System.out.println(obj);
+    }
+    
 }
+		
+		
+    

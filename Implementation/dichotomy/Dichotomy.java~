@@ -1,8 +1,8 @@
-package Implementation.dichotomy;
+package dichotomy;
 import java.io.*;
 
 public class Dichotomy{
-    int loc = 0;
+    static int loc = 0;
     public static int dic(int a[], int xFactor, int left, int right){
 	int flag = (a[0] < a[1]) ? 1:0;
 	if (left > right || ((left == right) && !(a[left] == xFactor))) return loc;
