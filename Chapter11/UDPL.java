@@ -1,4 +1,4 @@
-ximport java.net.*;
+import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -18,8 +18,8 @@ class L_Frame extends Frame implements Runnable,ActionListener{
     public void actionPerformed(ActionEvent event){
 	byte buffer[] = out_message.getText().trim().getBytes();
 	try{
-	    InetAddress address = InetAddress.getByName("192.168.8.14");
-	    DatagramPacket data_pack = new DatagramPacket (buffer, buffer.length, address, 888);
+	    InetAddress address = InetAddress.getByName("127.0.0.1");
+	    DatagramPacket data_pack = new DatagramPacket (buffer, buffer.length, address, 545);
 	    DatagramSocket mail_data = new DatagramSocket();
 	    in_message.append("Target Host Adr: " + data_pack.getAddress() + "\n");
 	    in_message.append("Target Port: " + data_pack.getPort() + "\n");
@@ -35,7 +35,7 @@ class L_Frame extends Frame implements Runnable,ActionListener{
 	byte data[] = new byte[8192];
 	try{
 	    pack = new DatagramPacket(data, data.length);
-	    mail_data = new DatagramSocket(666);
+	    mail_data = new DatagramSocket(545);
 	}catch (Exception e){}
 	while(true){
 	    if (mail_data == null) break;

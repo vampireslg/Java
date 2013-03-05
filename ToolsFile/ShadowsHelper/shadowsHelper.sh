@@ -19,7 +19,7 @@
 #  Rmove_Ins	#Remove(String ins, int index)
 cd /home/gaoang
 #  clear
-ls
+#  ls
 #  ssh gaoang@192.168.1.30
-#  ssh gaoang@192.168.1.34
+ssh gaoang@192.168.1.34
 #  #No Blank Space Otherwise ArrayIndexOutOfBoundsException

@@ -7,7 +7,7 @@ class K_Frame extends Frame implements Runnable,ActionListener{
     TextArea in_message = new TextArea();
     Button b = new Button("Send Msg Package to L");
     K_Frame(){
-	super("L");
+	super("K");
 	setSize(200,500);setVisible(true);
 	b.addActionListener(this);
 	add(out_message,"South");add(in_message,"Center"); add(b,"North");
@@ -19,7 +19,7 @@ class K_Frame extends Frame implements Runnable,ActionListener{
 	byte buffer[] = out_message.getText().trim().getBytes();
 	try{
 	    InetAddress address = InetAddress.getByName("192.168.8.14");
-	    DatagramPacket data_pack = new DatagramPacket (buffer, buffer.length, address, 666);
+	    DatagramPacket data_pack = new DatagramPacket (buffer, buffer.length, address, 545);
 	    DatagramSocket mail_data = new DatagramSocket();
 	    in_message.append("Target Host Adr: " + data_pack.getAddress() + "\n");
 	    in_message.append("Target Port: " + data_pack.getPort() + "\n");
@@ -35,7 +35,7 @@ class K_Frame extends Frame implements Runnable,ActionListener{
 	byte data[] = new byte[8192];
 	try{
 	    pack = new DatagramPacket(data, data.length);
-	    mail_data = new DatagramSocket(888);
+	    mail_data = new DatagramSocket(545);
 	}catch (Exception e){}
 	while(true){
 	    if (mail_data == null) break;

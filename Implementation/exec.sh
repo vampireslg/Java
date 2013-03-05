@@ -1,2 +1,4 @@
-javac CircularWSDeque.java
-java CircularWSDeque
+#javac CircularWSDeque.java
+#java CircularWSDeque
+javac Dichotomy.java
+java Dichotomy

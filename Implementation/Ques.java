@@ -1,0 +1,26 @@
+import java.io.*;
+import static dichotomy.Dichotomy.*;
+
+class Ques{
+    
+    public static void main(String[] args){
+	int set[] = new int[1000];
+	try{
+	    RandomAccessFile in = new RandomAccessFile("1000primes.txt", "rw");
+	    int loc = 0 ;
+	    long length = in.length();
+	    String str = null;
+	    while((str = in.readLine()) != null){
+		set[loc] = Integer.parseInt(str);		
+		loc ++ ;
+	    }
+	    in.close();
+	}catch(IOException e){}
+	for (int i = 0 ; i < set.length; i++){
+	    System.out.print(1 + dic(set, set[i], 0, 999) + ", ");
+	    if ( i % 20 == 0){
+		//System.out.println("\n");
+	    }
+	}
+    }
+}
