@@ -1,8 +1,0 @@
-public class Example9_20{
-    public static void main(String args[]){
-	Daemon a=new Daemon();
-	a.A.start();
-	a.B.setDaemon(true);
-	a.B.start();
-    }
-}
