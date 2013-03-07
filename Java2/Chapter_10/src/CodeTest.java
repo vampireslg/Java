@@ -1,0 +1,9 @@
+import java.io.File;
+public class CodeTest {
+	public static void main(String[] args) {
+		File file=new File("/home/gaoang/Java/Chapter_10/src/", "CodeTest.java");
+		File file2=new File("CodeTest.java");
+		System.out.println("File's Directory: "+file2.getAbsolutePath());
+		System.out.println(file.exists());
+	}
+}

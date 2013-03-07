@@ -6,9 +6,8 @@ import static Package.print.Print.*;
 
 public class Prime{
     public static void main(String[] args){
-	//System.out.println("Number of primes in 10,100,1000..ars as follows : ");
 	primes thr=new primes();
-	thr.primes(2,10000000000l); // 10 ^ 10
+	thr.primes(2,1000000000000000l); // 10 ^ 15
 	try{
 	    RandomAccessFile out=new RandomAccessFile("myprimes.txt", "rw");
 	    for(int i = 2 ; i < 1000000; i++){
@@ -46,7 +45,7 @@ class primes{
 	    }
 	}
 	endTime=System.currentTimeMillis();
-	print("Time consuming "+(6130+(endTime-startTime)/1000)+"s for primes between "+minNum+" and " +maxNum);
+	print("Time consuming "+(endTime-startTime)/1000 +"s for primes between "+minNum+" and " +maxNum);
        	//System.out.println("Number of Primes between "+minNum+" and "+maxNum+" \n" + primeSet.lastIndexOf(primeSet.lastElement()));
 	//primeNum = primeSet.lastIndexOf(primeSet.lastElement());
 	//return (primeSet.lastIndexOf(primeSet.lastElement()));

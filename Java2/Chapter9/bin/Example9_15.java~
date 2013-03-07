@@ -1,0 +1,5 @@
+class A implements Runnable{
+	int i=0;
+	String neme;
+	public void run(){
+		while(true){

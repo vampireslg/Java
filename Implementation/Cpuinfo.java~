@@ -1,0 +1,19 @@
+import java.Sy
+
+class Cpuinfor{
+    public static void main(String[] args){
+	final int BOUND = 10000000000;
+	int start = System.currentTimeMillis();
+	int in = 0 ;
+	for (int i = 0 ; i < BOUND; i++){
+	    in = in + i;
+	}
+	int end = System.currentTimeMillis();
+	int tc = (end - start)/1000;
+	print("CpuComputationSpeed >> \n" + BOUND/tc + " Times Per Second .");
+
+    }
+    public static void print(Object obj){
+	System.out.println(obj);
+    }
+}

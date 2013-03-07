@@ -6,3 +6,9 @@ foreach (@line){
     s/\w<([^>]+)>/\U$1/g;
     print;
 }
+$line = <STDIN>;
+if ($lien eq "\n"){
+    print "That was just a bland line !\n";
+}else {
+    print "That line of input was : $line ";
+}
