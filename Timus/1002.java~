@@ -1,0 +1,12 @@
+import java.io.*;
+improt java.util.*;
+
+class 1002{
+    static final int MAX_ITEMS = 131072;
+    public static void main(String[] args) throws IOException {
+	BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+	String str = null;
+
+
+    }
+}

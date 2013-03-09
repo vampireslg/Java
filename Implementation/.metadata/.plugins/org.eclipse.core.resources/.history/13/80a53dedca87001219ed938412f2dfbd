@@ -1,0 +1,17 @@
+package circularArray;
+
+public class CircularArray {
+	private int logCapacity ;
+	private Runnable[] currentTasks;
+	CircularArray(int myLogCapacity){
+		logCapacity = myLogCapacity ;
+		currentTasks = new Runnable[1 << logCapacity];
+	}
+	int capacity(){
+		return 1 << logCapacity ;
+	}
+	Runnable get (int i){
+		return currentTasks[i % capacity()];
+	}
+	
+}

@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class T1002{
+    static final int MAX_ITEMS = 131072;
+    public static void main(String[] args) throws IOException {
+	final StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in, "ISO-8859-1")));
+	final PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out, "ISO-8859-1"));
+
+	double[] dat = new double[MAX_ITEMS];
+	int count = 0 ;
+
+	//read all numbers and store them
+	while(in.nextToken() != StreamTokenizer.TT_EOF)
+	    dat[count ++] = Math.sqrt((long) in.nval);
+
+	for(;count -- > 0;)
+	    out.format("%.4f\n", dat[count]);
+
+	out.flush();
+
+
+    }
+}

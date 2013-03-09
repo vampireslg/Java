@@ -1,0 +1,5 @@
+#Sat Mar 09 16:52:44 CST 2013
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=emacs+

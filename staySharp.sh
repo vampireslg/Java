@@ -1,2 +1,2 @@
-cd Examples6
+cd Java2/Examples6
 ./cal.sh

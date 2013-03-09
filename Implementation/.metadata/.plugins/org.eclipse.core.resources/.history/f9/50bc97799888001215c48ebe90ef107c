@@ -1,0 +1,8 @@
+package circularArray;
+
+public class UnboundedDEQueue {
+	private final static int LOG_CAPACITY = 4;
+	private volatole CircularArray tasks;
+	
+
+}
