@@ -1,0 +1,31 @@
+import circularArray.*;
+
+public class Operations {
+	public static void main(String[] args) {
+		WorkStealing ws ; 
+		UnboundedDEQueue ud = new UnboundedDEQueue(4);
+		for (int i = 0; i< 4<<1; i++){
+			ud.pushBottom(i*100+1);
+		}
+		ws = new WorkStealing(ud);
+		
+		
+		
+	}
+		
+	
+	class WorkStealing extends Thread{
+		UnboundedDEQueue ud ;
+		WorkStealing(UnboundedDEQueue ud){
+			this.ud = ud;			
+		}
+		public void run(){
+			int bottom = ud.getBottom();
+			while(bottom != -1){
+				bottom = ud.popBottom();
+				System.out.println(bottom);
+			}
+		}
+		
+	}
+}
