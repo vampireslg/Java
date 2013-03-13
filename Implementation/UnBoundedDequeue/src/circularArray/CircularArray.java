@@ -1,8 +1,8 @@
 package circularArray;
 
 public class CircularArray {
-    private static int logCapacity ;
-    private static int[] currentTasks;
+    private  int logCapacity ;
+    private  int[] currentTasks;
     public CircularArray(int myLogCapacity){
 	logCapacity = myLogCapacity ;
 	currentTasks = new int[1 << logCapacity];
@@ -19,13 +19,9 @@ public class CircularArray {
     }
 	
     public CircularArray resize( int bottom, int top ){
-	int[] oldTasks = new int[capacity()];
-	for (int i = top ;i < bottom ; i++){
-	    oldTasks[ i % capacity()] = get(i);
-	}
 	CircularArray newTasks = new CircularArray(this.logCapacity + 1);
 	for (int i = top ;i < bottom ;i++){
-	    int tem = oldTasks[i % capacity()];
+	    int tem = get(i);
 	    newTasks.put(i,tem);
 	}
 	return newTasks;

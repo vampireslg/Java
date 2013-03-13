@@ -1,2 +1,3 @@
-javac AtomicityTest.java
-java AtomicityTest
+javac SimpleDaemons.java
+java SimpleDaemons 
+
