@@ -1,0 +1,2 @@
+javac RestaurantWithQueues.java
+java RestaurantWithQueues

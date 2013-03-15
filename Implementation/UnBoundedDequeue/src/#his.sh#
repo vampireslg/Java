@@ -1,0 +1,300 @@
+ 1738  em Random.java~ 
+ 1739  em Random.java
+ 1740  em RandomTest.
+ 1741  em RandomTest.java
+ 1742  cd Implementation/UnBoundedDequeue/
+ 1743  ll
+ 1744  cd src/
+ 1745  ll
+ 1746  em Operations.java
+ 1747  cd Implementation/UnBoundedDequeue/src/
+ 1748  ll
+ 1749  ./operation.sh
+ 1750  ll
+ 1751  cd circularArray/
+ 1752  ll
+ 1753  mv UnboundedDEQueue.* UnboundedDequeue.*
+ 1754  mv UnboundedDEQueue.* UnboundedDequeue.java
+ 1755  mv UnboundedDEQueue.java UnboundedDequeue.java
+ 1756  ll
+ 1757  rm UnboundedDEQueue.*
+ 1758  cd ..
+ 1759  javac circularArray/UnboundedDequeue.java 
+ 1760  em circularArray/UnboundedDequeue.java 
+ 1761  javac circularArray/UnboundedDequeue.java 
+ 1762  em circularArray/UnboundedDequeue.java 
+ 1763  javac circularArray/UnboundedDequeue.java 
+ 1764  ./operation.sh
+ 1765  em operation.sh
+ 1766  ./operation.sh
+ 1767  cat circularArray/UnboundedDequeue.java
+ 1768  clear
+ 1769  cat circularArray/UnboundedDequeue.java
+ 1770  ./operation.sh
+ 1771  tf
+ 1772  df
+ 1773  df --help
+ 1774  df -B
+ 1775  df -a
+ 1776  df -P
+ 1777  df -B
+ 1778  df -B G
+ 1779  clear
+ 1780  ll
+ 1781  ./operation.sh
+ 1782  clear
+ 1783  ./operation.sh
+ 1784  claer
+ 1785  clear
+ 1786  ./operation.sh
+ 1787  cat /etc/issue
+ 1788  clear
+ 1789  ./operation.sh
+ 1790  clear
+ 1791  ./operation.sh
+ 1792  ./operation.sh | less
+ 1793  clear
+ 1794  ./operation.sh | less
+ 1795  clear
+ 1796  ./operation.sh | less
+ 1797  vnstat -d
+ 1798  vnstat -m
+ 1799  vnstat -y
+ 1800  vnstat -h
+ 1801  vnstat -mi
+ 1802  vnstat 
+ 1803  clear
+ 1804  ./operation.sh | less
+ 1805  ./operation.sh 
+ 1806  ./operation.sh  | less
+ 1807  clear
+ 1808  c
+ 1809  cl
+ 1810  alias 
+ 1811  alias cl='clear'
+ 1812  cl
+ 1813  cd -
+ 1814  ll
+ 1815  ./operation.sh
+ 1816  ./operation.sh | less
+ 1817  ./operation.sh 
+ 1818  cl
+ 1819  ./operation.sh 
+ 1820  ./operation.sh | less
+ 1821  clear
+ 1822  ./operation.sh 
+ 1823  clear
+ 1824  ./operation.sh 
+ 1825  clar
+ 1826  ./operation.sh 
+ 1827  clear
+ 1828  ./operation.sh 
+ 1829  cl
+ 1830  ./operation.sh 
+ 1831  cl
+ 1832  c
+ 1833  cl
+ 1834  cd -
+ 1835  ./operation.sh 
+ 1836  ghci
+ 1837  cd Implementation/UnBoundedDequeue/src/
+ 1838  ll
+ 1839  em Operations.java
+ 1840  grep -r "currentTime" *
+ 1841  cd Implementation/
+ 1842  ll
+ 1843  cat Cpuinfo.java
+ 1844  cd Implementation/
+ 1845  cat Cpuinfo.java
+ 1846  grep -r "rand" *
+ 1847  cd Test/
+ 1848  em RandomTest.
+ 1849  em RandomTest.java
+ 1850  cd ../ThinkInJava_Codes/
+ 1851  ll
+ 1852  em HorseRace.java 
+ 1853  grep -iw sleep *
+ 1854  grep -iw "sleep" *
+ 1855  grep -i "sleep" *
+ 1856  grep -rwi "sleep" *
+ 1857  cd Java2/Chapter9/src/
+ 1858  em Example9_15.java
+ 1859  cd Implementation/UnBoundedDequeue/src/
+ 1860  ll
+ 1861  clear
+ 1862  ll
+ 1863  mv operation.sh~ 
+ 1864  rm operation.sh~ 
+ 1865  rm Operations.*
+ 1866  ./threadSteal.sh
+ 1867  exit
+ 1868  ssh gao
+ 1869  exit 
+ 1870  ll
+ 1871  ps -ef
+ 1872  cl
+ 1873  ll
+ 1874  clear
+ 1875  ps --help
+ 1876  ps -ef | grep chrominum*
+ 1877  ps -ef | grep chromi*
+ 1878  ps -ef | grep chromium*
+ 1879  clear
+ 1880  ps -ef | grep chromium*
+ 1881  ps | grep chromium*
+ 1882  ps -e | grep chromium*
+ 1883  kill 19815 19817 19818 19819 
+ 1884  ps -e | grep chromium*
+ 1885  exit
+ 1886  cd Test/
+ 1887  ll
+ 1888  em ListPrint.java
+ 1889  cd Test/
+ 1890  ll
+ 1891  javac ListPrint.java 
+ 1892  java ListPrint 
+ 1893  javac ListPrint.java 
+ 1894  java ListPrint 
+ 1895  clear
+ 1896  javac ListPrint.java 
+ 1897  java ListPrint 
+ 1898  javac ListPrint.java 
+ 1899  java ListPrint 
+ 1900  ll
+ 1901  em listprint.sh
+ 1902  chmod 755 *.sh
+ 1903  ./listprint.sh 
+ 1904  mkdir .sh
+ 1905  mv *.sh .sh
+ 1906  ll
+ 1907  rmdir
+ 1908  rmdir .sh
+ 1909  cd .sh/
+ 1910  ll
+ 1911  mv -a ../
+ 1912  mv *.* ../
+ 1913  ll
+ 1914  cd ..
+ 1915  ll
+ 1916  rmdir .sh
+ 1917  ll
+ 1918  ./listprint.sh 
+ 1919  clear
+ 1920  ./listprint.sh 
+ 1921  ./listprint.sh  | less
+ 1922  clear
+ 1923  ./listprint.sh  | less
+ 1924  ./listprint.sh  
+ 1925  javac -Xlint ListPrint.java 
+ 1926  ./listprint.sh  
+ 1927  clear
+ 1928  ./listprint.sh  
+ 1929  javac -Xlint ListPrint.java 
+ 1930  path
+ 1931  PATH
+ 1932  javac -Xlint ListPrint.java 
+ 1933  ./listprint.sh  
+ 1934  javac -Xlint ListPrint.java 
+ 1935  clear
+ 1936  ./listprint.sh  
+ 1937  javac -Xlint ListPrint.java 
+ 1938  clear
+ 1939  ./listprint.sh  
+ 1940  javac ListPrint.java 
+ 1941  clear
+ 1942  javac ListPrint.java 
+ 1943  clear
+ 1944  javac ListPrint.java 
+ 1945  ./listprint.sh 
+ 1946  em ListPrint.java~
+ 1947  ./listprint.sh 
+ 1948  ./listprint.sh | less
+ 1949  em ListPrint.java~
+ 1950  ./listprint.sh | less
+ 1951  ./listprint.sh  
+ 1952  p
+ 1953  ./listprint.sh  
+ 1954  em listprint.sh 
+ 1955  javac ListPrint.java 
+ 1956  java ListPrint 
+ 1957  em listprint.sh 
+ 1958  ./listprint.sh  
+ 1959  clear
+ 1960  ./listprint.sh  
+ 1961  clear
+ 1962  ./listprint.sh  
+ 1963  cat ListPrint.java~
+ 1964  ./listprint.sh  
+ 1965  clear
+ 1966  top
+ 1967  gnome-paint
+ 1968  sudo apt-get install gnome-paint 
+ 1969  gnome-paint &
+ 1970  chromium-browser &
+ 1971  ll
+ 1972  cd Implementation/
+ 1973  ll
+ 1974  cd UnBoundedDequeue/src/
+ 1975  eclipse &
+ 1976  ./threadSteal.sh
+ 1977  clear
+ 1978  ./threadSteal.sh
+ 1979  clear
+ 1980  ./threadSteal.sh
+ 1981  clear
+ 1982  ./threadSteal.sh
+ 1983  clear
+ 1984  ./threadSteal.sh
+ 1985  claer
+ 1986  clear
+ 1987  ./threadSteal.sh
+ 1988  clear
+ 1989  ./threadSteal.sh
+ 1990  apt-cache search email
+ 1991  apt-cache search email | grep command
+ 1992  sudo apt-get  install sendemail 
+ 1993  sendemail 
+ 1994  sendemail -f 842406696@qq.com -xu gaoang@ios.ac.cn -xp westlg2090
+ 1995  sendemail -t 842406696@qq.com -xu gaoang@ios.ac.cn -xp westlg2090
+ 1996  sendemail -f -t 842406696@qq.com -xu gaoang@ios.ac.cn -xp westlg2090
+ 1997  sendemail -f 842406696@qq.com 
+ 1998  sendemail -f 842406696@qq.com -t 842406696@qq.com
+ 1999  sudo apt-get purge sendemail 
+ 2000  cd Implementation/UnBoundedDequeue/src/
+ 2001  ll
+ 2002  ./threadSteal.sh
+ 2003  ll
+ 2004  ./threadSteal.sh
+ 2005  clear
+ 2006* 
+ 2007  clear
+ 2008  ./threadSteal.sh
+ 2009  clear
+ 2010  ./threadSteal.sh
+ 2011  clear
+ 2012  ./threadSteal.sh
+ 2013  clear
+ 2014  ./threadSteal.sh
+ 2015  clear
+ 2016  ./threadSteal.sh
+ 2017  top
+ 2018  ulimit -v
+ 2019  ulimit --help
+ 2020  man ulimit 
+ 2021  ./threadSteal.sh
+ 2022  tf
+ 2023  df
+ 2024  df -m
+ 2025  df -G
+ 2026  df -Gg
+ 2027  df -g
+ 2028  man df
+ 2029  df -B
+ 2030  df -b
+ 2031  man df
+ 2032  df -BM
+ 2033  df -BG
+ 2034  dpkg -lt
+ 2035  man dpkg 
+ 2036  netstat 
+ 2037  history 300 > his.sh

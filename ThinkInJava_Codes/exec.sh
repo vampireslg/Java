@@ -1,3 +1,2 @@
-javac SimpleDaemons.java
-java SimpleDaemons 
-
+javac HorseRace.java
+java HorseRace

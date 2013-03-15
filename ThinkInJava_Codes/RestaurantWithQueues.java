@@ -1,0 +1,162 @@
+import java.util.concurrent.*;
+import java.util.*;
+import enumerated.menu.*;
+
+class Order{
+    private static int counter = 0 ;
+    private final int id = counter ++;
+    private final Customer customer;
+    private final Waitperson waitperson ;
+    private final Food food;
+    public Order(Customer cus, Waitperson wp, Food fo){
+	customer = cus ;
+	waitperson = wp ;
+	food = fo;
+    }
+    public Food item(){return food;}
+    public Customer getCustomer() {return customer; }
+    public Waitperson getWaitperson(){return waitperson ;}
+    public String toString(){
+	return "Order: " + id + "item: " + food + " for: " + customer
+	    + " served by: " + waitperson ;
+    }
+}
+
+//Comes back from the chef ;
+class Plate{
+    private final Order order;
+    private final Food food ;
+    public Plate(Order ord, Food fo){
+	order = ord ;
+	food = fo;
+    }
+    public Order getOrder(){return order ;}
+    public Food getFood(){ return food ;}
+    public String toString() { return food.toString(); }
+}
+
+class Customer implements Runnable{
+    private static int counter = 0 ;
+    private final int id = counter ++ ;
+    private final Waitperson waitperson ;
+    private SynchronousQueue<Plate> placeSetting =
+	new SynchronousQueue<Plate>();
+    public Customer(Waitperson wp){ waitperson = wp ;}
+    public void deliver(Plate p) throws InterruptedException{
+	placeSetting.put(p);
+    }
+
+    public void run(){
+	for(Course course : Course.values()){
+	    Food food = course.randomSelection();
+	    try{
+		waitperson.placeOrder(this, food);
+		System.out.println(this + "eating " + placeSetting.take());
+	    }catch(InterruptedException e){
+		System.out.println(this + "waiting for " + course + " interrupted ");
+		break;
+	    }
+	}
+	System.out.println(this + "finished meal, leaving ");
+    }
+    public String toString(){
+	return "Customer " + id + " " ;
+    }
+}
+
+
+class Waitperson implements Runnable{
+    private static int counter = 0 ;
+    private final int id = counter ++;
+    private final Restaurant restaurant;
+    BlockingQueue<Plate> filledOrders = new LinkedBlockingQueue<Plate>();
+    public void waitperson(Restaurant rest){restaurant = rest ;}
+    public void placeOrder(Customer cus, Food food ){
+	try{
+	    restaurant.orders.put(new Order(cus, this , food));
+	}catch(InterruptedException e){
+	    System.out.println(this + "placeOrder interrupted ");
+	}
+    }
+    public void run(){
+	try{
+	    while(!Thread.interrupted()){
+		Plate plate = filedOrders.take();
+		System.out.println(this + "received " + plate + " delivering to " +
+		      plate.getOrder().getCustomer());
+		plate.getOrder().getCustomer().deliver(plate);
+	    }
+	}catch(InterruptedException  e){
+	    System.out.println(this + " interrupted " );
+	}
+	System.out.println(this + " off duty ");
+    }
+}
+
+class Chef implements Runnable{
+    private static int counter = 0 ;
+    private final int id = counter ++ ;
+    private final Restaurant restaurant ;
+    private static Random rand = new Random(47);
+    public Chef(Restaurant rest){restaurant = rest;}
+    public void run(){
+	try{
+	    while(!Thread.interrupted()){
+		Order order = restaurant.orders.take();
+		Food requestedItem = order.item();
+		TimeUnit.MILLISECONDS.sleep(rand.nextInt(500));
+		Plate plate = new Plate(order, requestedItem);
+		order.getWaitperson().filedOrders.put(plate);
+	    }
+	}catch(InterruptedException e){
+	    System.out.println(this + " interrupted");
+	}
+	System.out.println(this + " off duty ");
+    }
+    public String toString(){return " Chef " + id + " " ;}
+}
+
+class Restaurant implements Runnable{
+    private List<Waitperson> waitpersons =
+	new ArrayList<Waitpersons>();
+    private List<Chef> chefs = new ArrayList<Chef>();
+    private ExecutorService exec;
+    private static Random rand = new Random (47);
+    BlockingQueue<Order> orders = new LinkedBlockingQueue<Order>();
+    public Restaurant(ExecutorService e, int nWaitPersons, int nChefs){
+	exec = e;
+	for (int i = 0 ; i < nWaitPersons; i ++ ){
+	    Waitperson waitperson = new Waitperson(this);
+	    waitpersons.add(waitperson);
+	    exec.execute(waitperson);
+	}
+	for (int i = 0 ; i < nChefs; i ++ ){
+	    Chef chef = new Chef(this);
+	    chefs.add(chef);
+	    exec.execute(chef);
+	}
+    }
+    public void run(){
+	try{
+	    while(!Thread.interrupted()){
+		Waitperson wp = waitpersons.get(rand.nextInt(waitpersons.size()));
+		Customer c = new Customer(wp);
+		exec.execute(c);
+	    }
+	}catch(InterruptedException e){
+	    System.out.println("Restaurant interrupted ");
+	}
+	System.out.println("Restaurant closing");
+    }
+}
+
+
+public class RestaurantWithQueues{
+    public static void main(String[] args) throws Exception{
+	ExecutorService exec = Executors.newCachedThreadPool();
+	Restaurant restaurant = new Restaurant(exec, 5, 2);
+	exec.executors(restaurant);
+	exec.shutdownNow();
+    }
+}
+

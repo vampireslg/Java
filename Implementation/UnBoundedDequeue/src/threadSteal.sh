@@ -1,3 +1,3 @@
 javac circularArray/UnboundedDequeue.java
-javac Operations.java
-java Operations
+javac ThreadSteal.java
+java ThreadSteal

@@ -1,0 +1,68 @@
+import circularArray.*;
+import java.util.Random;
+import java.util.*;
+
+public class Operations {
+    final static int SIZE = 14; //How many items in dequeue;
+    final static int DEQ_NUM = 10 ; // Dequeues' number
+    public static void main(String[] args) {
+	WorkStealing ws1, ws2;
+	UnboundedDequeue[] uDequeues = new UnboundedDequeue[DEQ_NUM]; 
+	for(int i = 0 ; i < DEQ_NUM ; i ++){
+	    uDequeues[i] = new UnboundedDequeue(0);
+	    for (int j = 1 ; j <= SIZE ;j ++ ){
+		uDequeues[i].pushBottom(j + uDequeues[i].getBottom() + 1);
+	    }
+	}
+	
+	System.out.println(">>>>");
+	ws1 = new WorkStealing(uDequeues[0] , 0 , uDequeues);
+	ws2 = new WorkStealing(uDequeues[1] , 0 , uDequeues);
+	ws1.start();
+	ws2.start();
+    }
+		
+	
+    static class WorkStealing extends Thread{
+	final static int PUSH_BOUND = 5;
+	final static int STEAL_BOUND = 10;// How much times steal is allowed
+	final static int THREADS = 2 ;
+	private int num; 
+	UnboundedDequeue ud ;
+	UnboundedDequeue[] uDequeues;
+	
+	WorkStealing(UnboundedDequeue deq, int num, UnboundedDequeue[] uDequeues){
+	    this.ud = deq;
+	    this.num = num;
+	    this.uDequeues = uDequeues;
+	}
+
+	public void run(){
+	    //Random number list
+	    List<Integer> list = new ArrayList<Integer>();
+	    for(int i = 0 ; i < THREADS ; i ++ ){
+		list.add(i);
+	    }	
+	    Collections.shuffle(list);
+
+	    print(this + " Started  : ");
+	    while(!ud.isEmpty()){
+		    print(ud.popBottom() + "  POPED  from Bottom by    " +  this );
+		}
+	    
+	    if(ud.isEmpty()){
+		int stealTry = 0 ;
+		for(Integer i : list){
+		    while(!uDequeues[i].isEmpty()){
+			print(uDequeues[i].popTop() + " is STEALED by   " + this );
+		    }
+		}
+	    }
+	    print(" >> " + this + " ' HAS ITS WORK DONE, OFF DUTY NOW !!! >  \n" ) ;
+	}
+    }
+
+    public static void print(Object obj){
+	System.out.println(obj);
+    }
+}
