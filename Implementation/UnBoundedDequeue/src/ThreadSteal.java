@@ -4,7 +4,7 @@ import java.awt.JobAttributes;
 import java.util.*;
 
 public class ThreadSteal {
-    final static int SIZE = 100; //How many items in dequeue;
+    final static int SIZE = 500; //How many items in dequeue;
     final static int DEQ_NUM = 1000; // Dequeues' number
     public static void main(String[] args) {
     	System.out.println(" >>> \n ");

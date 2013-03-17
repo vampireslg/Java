@@ -20,10 +20,6 @@
 cd /home/gaoang
 #  clear
 #  ls
-#  ssh gaoang@192.168.1.30
+ssh gaoang@192.168.1.30
 #  ssh gaoang@192.168.1.34
-#  cd Java/
-#  cd java/OJ/
-#  cd Java/Implementation/
-cd Java/Implementation/UnBoundedDequeue/src
 #  #No Blank Space Otherwise ArrayIndexOutOfBoundsException
