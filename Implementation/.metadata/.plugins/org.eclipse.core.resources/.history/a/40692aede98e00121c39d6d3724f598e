@@ -1,0 +1,25 @@
+package concurrentQueue;
+
+public class Is_getFirst_Atomical extends AbstractSequentialList<E>
+    implements List<E>, Deque<E>,Clonearble,java.io.Serializable{
+    transient size = 0 ;
+    transient Node<E> first;
+    transient Node<E> last;
+    
+    public Is_getFirst_Atomical(){
+    }
+
+    public Is_getFirst_Atomical(Collection<? extends E> c){
+	this();
+	addAll(c);
+    }
+
+    public E getFirst(){
+	final Node<E> f = first ;
+	if(f == null)
+	    throw new NoSuchElementException();
+	return f.item;
+    }
+
+    
+}

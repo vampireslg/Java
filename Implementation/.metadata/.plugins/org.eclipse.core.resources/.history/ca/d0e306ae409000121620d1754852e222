@@ -1,0 +1,19 @@
+package sortAlgo;
+
+public class Tuple<A, B> {
+	public final int firstItem; 
+	public final int secondItem; 
+	
+	public Tuple(int a , int b){
+		this.firstItem = a ; 
+		this.secondItem = b ;
+	}
+	
+	public int getP(){//getParent
+		return firstItem ;
+	}
+	
+	public int getC(){ // getChild 
+		return secondItem ;
+	}
+}

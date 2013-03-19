@@ -1,0 +1,3 @@
+javac circularArray/UnboundedDequeue.java
+javac Operations.java
+java Operations

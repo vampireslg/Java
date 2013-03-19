@@ -1,0 +1,5 @@
+package concurrentQueue;
+
+public class Is_getFirst_Atomical {
+
+}

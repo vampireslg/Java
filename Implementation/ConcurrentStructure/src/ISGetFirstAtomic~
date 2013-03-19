@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+javac concurrentStructure/IsGetFirstAtomical.java
+java concurrentStructure.IsGetFirstAtomical

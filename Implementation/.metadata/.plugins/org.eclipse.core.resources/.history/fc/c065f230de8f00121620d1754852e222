@@ -1,0 +1,20 @@
+package sortAlgo;
+
+import java.util.LinkedList;
+
+public class NodeInitiation<c> {
+	Node[] node ;
+	private int i = 1 ;
+	public NodeInitiation() {
+	}
+	
+	NodeInitiation(Tuple<Integer, Integer>[] tuple){
+		for(Node n : node){
+			this.node[i - 1] = new Node(i , new LinkedList<Integer>(), new LinkedList<Integer>());
+		}
+		for (Tuple tup :  tuple){
+			node[tup.getP() - 1].getSucList().add(tup.getC());
+			node[tup.getC() - 1].getPreList().add(tup.getP());
+		}
+	}
+}

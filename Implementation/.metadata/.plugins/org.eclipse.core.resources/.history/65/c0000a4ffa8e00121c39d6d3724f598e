@@ -1,0 +1,44 @@
+package concurrentStructure;
+
+import java.util.LinkedList;
+
+import javax.sound.sampled.ReverbType;
+
+public class IsGetFirstAtomical {
+	public static void main(String[] args) {
+		LinkedList_L<Integer> list = new LinkedList_L<Integer>();
+		/**for(int i = 0 ; i < 100; i++){
+			list.addFirst(i);
+		}
+		for(int i = 0 ; i < 10 ; i ++ ){
+			((LinkedList_L<Integer>)list).getFirst();
+			((LinkedList_L<Integer>)list).removeFirst();
+		}
+		*/
+		for(int i = 0 ; i < 100; i++){
+			list.addFirst(i);
+		}
+		RemoveVSGet thread1, thread2;
+		thread1 = new RemoveVSGet(list);
+		thread2 = new RemoveVSGet(list);
+		thread1.start();
+		thread2.start();
+	}
+}
+
+class RemoveVSGet extends Thread{
+	LinkedList_L<Integer> list; 
+	public RemoveVSGet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RemoveVSGet(LinkedList_L<Integer> list){
+		this.list = list; 
+	}
+	
+	public void run(){
+		for(int i = 0 ; i < 10 ; i ++ ){
+			((LinkedList_L<Integer>)list).removeFirst();
+		}
+	}
+}

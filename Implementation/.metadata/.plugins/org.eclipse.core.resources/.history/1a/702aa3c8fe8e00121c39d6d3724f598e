@@ -1,0 +1,68 @@
+package concurrentStructure;
+
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+
+import javax.sound.sampled.ReverbType;
+
+public class IsGetFirstAtomical {
+	final static int SIZE = 10 ;
+	
+	public static void main(String[] args) throws Exception {
+		/**LinkedList_L<Integer> list = new LinkedList_L<Integer>();
+		for(int i = 0 ; i < 100; i++){
+			list.addFirst(i);
+		}
+		RemoveVSGet thread1, thread2;
+		thread1 = new RemoveVSGet(list);
+		thread2 = new RemoveVSGet(list);
+		thread1.start();
+		thread2.start();
+	}
+	*/
+		AtomicReferenceArray<Integer> atomicArray = new AtomicReferenceArray<Integer>(SIZE);
+		new Thread(){
+			public void run(){
+				atomicArray.set();
+			}
+		}.start();
+		new Thread(){
+			public void run(){
+				atomicArray.get();
+			}
+		}.start();
+		
+		public int set(){
+			return 1;
+		}
+		public int get(){
+			return 2;
+		}
+		
+}
+
+class RemoveVSGet extends Thread{
+	//The result shows the obviousness of REMOVE & GET 's return is not atomical 
+	LinkedList_L<Integer> list;
+	private volatile String msg;
+	public RemoveVSGet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RemoveVSGet(LinkedList_L<Integer> list){
+		this.list = list; 
+	}
+	
+	public void run(){
+		for(int i = 0 ; i < 10 ; i ++ ){
+			System.out.print(this );
+			try{
+				((LinkedList_L<Integer>)list).removeFirst();
+			}catch(NoSuchElementException e){}
+		}
+	}
+}
+
+

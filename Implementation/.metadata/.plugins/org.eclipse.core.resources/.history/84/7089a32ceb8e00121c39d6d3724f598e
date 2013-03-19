@@ -1,0 +1,35 @@
+package concurrentQueue;
+
+import java.util.AbstractSequentialList;
+import java.util.Collection;
+import java.util.Deque;
+import java.util.List;
+import java.util.NoSuchElementException;
+
+import javax.xml.soap.Node;
+
+public  class Is_GetFirst_Atomical<E>
+extends AbstractSequentialList<E>
+implements List<E>, Deque<E>,Cloneable, java.io.Serializable
+{
+	transient int size = 0 ;
+    transient Node first;
+    transient Node last;
+    
+    public Is_getFirst_Atomical(){
+    }
+
+    public Is_getFirst_Atomical(Collection<? extends E> c){
+	this();
+	addAll(c);
+    }
+
+    public E getFirst(){
+	final Node f = first ;
+	if(f == null)
+	    throw new NoSuchElementException();
+	return f.item;
+    }
+
+    
+}

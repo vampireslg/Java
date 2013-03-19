@@ -1,0 +1,16 @@
+package sortAlgo;
+
+public class NodeInitiation {
+	Node[] node ;
+	int nodeNum; // Number of nodes to be initiated . 
+	public NodeInitiation() {
+	}
+	
+	NodeInitiation(Node[] node , Tuple[] tuple, int nodeNum ){
+		this.node = node ;
+		this.nodeNum = nodeNum; 
+		for (Tuple <p, c> : tuple ){
+			
+		}
+	}
+}

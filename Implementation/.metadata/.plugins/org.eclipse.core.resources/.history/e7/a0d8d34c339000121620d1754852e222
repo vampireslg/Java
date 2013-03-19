@@ -1,0 +1,20 @@
+package sortAlgo;
+import java.util.LinkedList;
+
+public class NodeInit_TwoDimArray {
+	int nodeNum ;
+
+	public LinkedList<Node> nodeInitiation (int[][] tupleArr, int nodeNum, LinkedList<Node> nodeList){
+		this.nodeNum = nodeNum ;
+		for( ; this.nodeNum -- > 0 ; ) {
+			nodeList.add(new Node(this.nodeNum, new LinkedList<Integer>(), new LinkedList<Integer>()));
+		}
+		
+		for (int[] item : tupleArr){
+			nodeList.get(item[0] - 1).getSucList().add(item[1]);
+			nodeList.get(item[1] - 1).getPreList().add(item[0]);
+		}
+		return nodeList; 
+	}
+	
+}

@@ -1,0 +1,13 @@
+package sortAlgo;
+
+public class NodeInitiation {
+	Node[] node ;
+	int itemNum; 
+	public NodeInitiation() {
+	}
+	
+	NodeInitiation(Node[] node , Tuple[] tuple){
+		this.node = node ;
+		
+	}
+}

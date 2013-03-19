@@ -1,0 +1,14 @@
+package sortAlgo;
+
+public class MethodsProducer {
+	/**
+	 * Randomly produce methods with partial order 
+	 */
+	final static int THREADS = 10 ;
+	final static int M_PerTHREAD = 25; // method per thread 
+	Tuple<int[][] , Integer> methodsProduce(){
+		int[][] orderArr = new int[200][2];
+		
+		return new Tuple<int[][], Integer> (orderArr , (THREADS)*M_PerTHREAD);
+	}
+}

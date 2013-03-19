@@ -1,0 +1,25 @@
+package sortAlgo;
+
+import java.util.*;
+
+public class TestSPO {
+	public static void main(String[] args) {
+		LinkedList<Node> nodeList = new LinkedList<Node>();
+		Node[] node = new Node[10];
+		int[] preArr = new int[10];
+		int[] nextArr = new int[10];
+		int nodeNum = 4 ;
+		Tuple<Integer, Integer>[] tuple = new Tuple<Integer, Integer>[nodeNum] ;
+		
+		
+		
+		//Sort.sortAndPrint(initList, outList, initList.size(), nodeList);
+	}
+	
+	static LinkedList<Integer> addArr(LinkedList<Integer> preList, int[] arr){
+		for (int i : arr)
+			preList.add(i);
+		return preList ;
+	}
+	
+}

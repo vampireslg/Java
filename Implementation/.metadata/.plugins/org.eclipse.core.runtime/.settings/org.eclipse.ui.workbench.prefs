@@ -1,2 +1,12 @@
+ACTIVE_HYPERLINK_COLOR=193,198,61
+CONTENT_ASSIST_BACKGROUND_COLOR=204,232,207
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.debug.ui.presentation\tTorg.eclipse.jdt.ui.presentation\tTorg.eclipse.compare.contentmergeviewer.TextMergeViewer
+ColorsAndFontsPreferencePage.selectedElement=COUTGOING_COLOR
+INCOMING_COLOR=186,186,225
+OUTGOING_COLOR=184,38,254
 eclipse.preferences.version=1
+org.eclipse.jdt.ui.ColoredLabels.inherited=210,210,244
+org.eclipse.jdt.ui.DeclarationView.backgroundColor=9,226,158
+org.eclipse.jdt.ui.JavadocView.backgroundColor=221,199,199
+org.eclipse.jdt.ui.editors.textfont=1|Serif|11.0|0|GTK|1|;
 org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="com.mulgasoft.emacsplusConfiguration"/>\n<keyBinding commandId\="com.mulgasoft.emacsplus.newLineIndent" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="com.mulgasoft.emacsplusConfiguration" keySequence\="CTRL+J"/>\n</org.eclipse.ui.commands>

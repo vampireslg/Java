@@ -1,0 +1,2 @@
+javac concurrentStructure/IsGetFirstAtomical.java
+java concurrentStructure.IsGetFirstAtomical

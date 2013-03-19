@@ -1,0 +1,11 @@
+package concurrentStructure;
+
+public class IsGetFirstAtomical {
+	public static void main(String[] args) {
+		LinkedList_L<Integer> list = new LinkedList_L<Integer>();
+		for(int i = 0 ; i < 100; i++){
+			list.add(10);
+			System.out.println(null);
+		}
+	}
+}

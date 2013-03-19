@@ -1,0 +1,18 @@
+package sortAlgo;
+
+import java.util.*;
+
+public class TestSPO {
+	public static void main(String[] args) {
+		LinkedList<Node> nodeList = new LinkedList<Node>();
+		List<Integer> nextList = new LinkedList<Integer>();
+		nextList.add(5);
+			
+		int[] nodeArr = {1,2,3,4,5};
+		for(int i : nodeArr){
+			nodeList.add(new Node(i, new LinkedList<Integer> () , 
+					nextList ));
+		}
+	}
+	
+}

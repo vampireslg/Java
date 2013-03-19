@@ -1,0 +1,2 @@
+javac sortAlgo/SortWithPatialOrder.java
+java sortAlgo.SortWithPatialOrder

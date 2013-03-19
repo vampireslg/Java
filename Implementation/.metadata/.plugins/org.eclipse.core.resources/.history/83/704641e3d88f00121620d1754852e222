@@ -1,0 +1,15 @@
+package sortAlgo;
+
+public class NodeInitiation {
+	Node node ;
+	public NodeInitiation() {
+	}
+	
+	NodeInitiation(Node node , int[] preArr,  int[] nextArr){
+		this.node = node ;
+		for (int i : preArr)
+			node.preList.add(i);
+		for(int i : nextArr)
+			node.nextList.add(i);
+	}
+}

@@ -1,0 +1,42 @@
+package concurrentQueue;
+
+public class Concurrent_Queue {
+	final static int THREAD_NUM = 10;
+	final static int QUEUE_SIZE = 100 ;
+	public static void main(String[] args) throws Exception {
+		long startTime = System.currentTimeMillis();
+		/**
+		 * For test.
+		 * 
+		 * 
+		 * * 		 */
+		ConcurrentLinkedListQueue testQueue = new ConcurrentLinkedListQueue();
+		testQueue.dequeue();
+				
+		
+		/**
+		 * 
+		 */
+		ConcurrentLinkedListQueue[] conQueue = new ConcurrentLinkedListQueue[THREAD_NUM];
+		Queue_With_Stealing[] threads = new Queue_With_Stealing[THREAD_NUM] ;
+		
+		for (int i = 0 ; i < THREAD_NUM; i ++){
+			conQueue[i] = new ConcurrentLinkedListQueue();
+			for(int j = 0 ; j < THREAD_NUM; j ++ ){
+				conQueue[i].enqueue(j *3 + 1);
+			}
+			threads[i] = new Queue_With_Stealing(conQueue[i], i , conQueue);
+			threads[i].start();
+		}
+		//for (int i = 0 ; i < THREAD_NUM; i ++ )
+			
+		
+		
+		//for(int i = 0 ; i < THREAD_NUM; i++)
+		//try{threads[i].join();
+		//}catch(InterruptedException e ){e.printStackTrace();}
+			
+		long endTime = System.currentTimeMillis();
+		System.out.println("Time_Consuming : " + (endTime - startTime )+ " Millis .");
+	}
+}

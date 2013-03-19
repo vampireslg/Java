@@ -1,0 +1,3 @@
+javac circularArray/UnboundedDequeue.java
+javac ThreadSteal.java
+java ThreadSteal

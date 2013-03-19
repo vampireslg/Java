@@ -1,0 +1,222 @@
+package sortAlgo;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.*;
+
+public class SortWithPatialOrder {
+
+	private static final int Node = 0;
+	private static final int LinkedList = 0;
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		List<Node> nodeList = new LinkedList<Node>();
+		List<Integer> preList2=new LinkedList<Integer>();
+		List<Integer> preList3=new LinkedList<Integer>();
+		List<Integer> nextList1 = new LinkedList<Integer>();
+		List<Integer> nextList4 = new LinkedList<Integer>();
+		preList2.add(1);
+		preList3.add(1);preList3.add(4);
+		nextList1.add(2); nextList1.add(3);
+		nextList4.add(3);
+		//LinkedList<Integer> outList = new LinkedList<Integer>();
+		Node node1 = new Node(1,new LinkedList<Integer>() , nextList1);
+		Node node2 = new Node(2,preList2, new LinkedList<Integer>());
+		Node node3 = new Node(3,preList3, new LinkedList<Integer>());
+		Node node4 = new Node(4,new LinkedList<Integer>(), nextList4);
+
+		nodeList.add(node1);nodeList.add(node2);
+		nodeList.add(node3);nodeList.add(node4);
+		/**for(Node node : nodeList){
+			printList(node.getPreList());
+			System.out.println("\n");//I did that .")	;
+		}
+		 */
+		List<Integer> list = new LinkedList<Integer>();
+		LinkedList<Integer> outList = new LinkedList<Integer>();
+		int[] arr = {1,2,3,4};
+		for(int i : arr){
+			list.add(i);
+		}
+
+		
+		/**LinkedList<Node> newList = new LinkedList<Node>();
+		for(Node node : nodeList)
+			newList.add((Node)node.clone());
+		((LinkedList<Integer>) newList.get(1).getPreList()).removeFirst();
+		for(int i : arr){	// 
+			System.out.println(i+ " >>> lalala  : ");	// 
+			SAP.printList(nodeList.get(i - 1).getPreList());
+		}
+		*/
+		SAP sap = new SAP();
+		sap.sortAndPrint(list, outList, list.size(), nodeList);
+
+	}
+	
+}
+
+class SAP{
+	public  void sortAndPrint(List<Integer> list, LinkedList<Integer> outList, int listLen, 
+			List<Node> nodeList ){
+		if(outList.size() == listLen &&
+				patialOrderTest(nodeList, outList)){
+			///**System.out.println(" If begins : ");
+			for(Node node : nodeList)
+				printList(node.getPreList());
+			//System.out.println(" If executed .");
+		}
+		for(Integer in : list){
+			List<Integer> temList = new LinkedList<Integer>(list); 
+			temList.remove(list.indexOf(in));
+			sortAndPrint(temList, conCat(outList, in), listLen, nodeList);
+		}
+	}
+
+	private LinkedList<Integer> conCat(LinkedList<Integer> list, Integer in ){
+		LinkedList<Integer> newList = new LinkedList<Integer>(list);
+		newList.add(in);
+		return newList ;
+	}
+
+	private  boolean patialOrderTest(List<Node> list , LinkedList<Integer> outList){
+		/**
+		 *  Test whether the sequence satisfy the PO, that is if  1 pre 2 ,then 2 ,1 ... will never occurs  .
+		 *  To do that ,we record the parent and children nodes for each node 
+		 *  Say : 1 has children nodes 2 ,3 ; || 2 has parent node 1; ||  3 has parents nodes 1 ,4 ; || 
+		 *  4 has children nodes 3 
+		 *  We get a seq 1 ,2 ,3, 4 ; to verify whether it's legal , we eliminate  1 of it's children nodes 2 ,3 
+		 *  and parents node 1 of 2, 3 at the same time .
+		 *  If all the preLists , aka  parent nodes  , of nodes under test are NULL , we call legal of that sequence  
+		 * 	 comprised by these nodes  .
+		 *  Sequence referred above is not legal as Node 3 's preList is not empty ( 4 remains left ) . 
+		 * 
+		 */
+		
+		LinkedList<Node> newList = new LinkedList<Node>();
+		for(Node node : list)
+			newList.add((Node)node.clone());
+		
+		/**for(Node node : list){
+			printList(node.getPreList());
+		}
+		*/
+
+		for(int in : outList){
+			if(  newList.get(in - 1).getPreList().size() >  0  ){
+				/**System.out.println("Now the node is : " + in + " its parent nodes are : " );
+				printList(newList.get(in - 1).getPreList());
+				System.out.println();
+				*/
+				return false ;
+			}
+			while(newList.get(in - 1).getNextList().size() > 0 ){ 
+				int item = ((LinkedList<Integer>) newList.get(in - 1 ).getNextList()).removeFirst();
+				int index = newList.get(item - 1 ).getPreList().indexOf(in); // location of child node of "Node in"
+				newList.get(item - 1).getPreList().remove(index);
+				//System.out.println("I am Node " + in + " Removed by child node :  " + item );
+			}
+		}
+		return  true ;
+	}
+
+	static void printList(List list) {// print list .
+		// TODO Auto-generated method stub
+		Iterator iter=list.iterator();
+		while(iter.hasNext())
+			System.out.print(iter.next()+ " ");
+		System.out.println();
+	}
+
+
+}
+
+class Node implements Cloneable{
+	public int val;
+	List<Integer> preList; 
+	List<Integer> nextList; 
+	Node(Integer in, List<Integer> preList , List<Integer> nextList){
+		val = in ;
+		this.preList = preList;
+		this.nextList = nextList ;
+	}
+	
+	public Object clone(){
+		Node node = null;
+		try{
+			node = (Node) super.clone();
+		}catch(CloneNotSupportedException e){
+			e.printStackTrace();
+		}
+		node.preList = new LinkedList<Integer>();
+		node.nextList = new LinkedList<Integer>();
+		for(int i : preList)
+			node.preList.add(i);
+		for(int i : preList)
+			node.nextList.add(i);
+		return node;
+	}
+	
+
+	public List getPreList(){
+		return preList ;
+	}
+
+	public List getNextList(){
+		return nextList ;
+	}
+
+	public void setPreList(Integer[] in){
+		for(Integer val : in){
+			preList.add(val);
+		}
+	}
+
+
+	public void nextPreList(Integer[] in){
+		for(Integer val : in){
+			nextList.add(val);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
