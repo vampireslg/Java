@@ -1,0 +1,89 @@
+package smartalgorithm;
+import java.util.*;
+
+import sortAlgo.*;
+
+public class CriticalPath {
+	/**
+	 * Find the longest path in DAG .
+	 * Return result in form of List .
+	 */
+	public static void main(String[] args) throws Exception{
+		int[][] initArry = {{1,8},{8,3},{1,2}}; //,{4,5},{5,6},{5,7},{7,8}};
+		LinkedList<Integer> list = new LinkedList<>();
+		Tuple<Integer, LinkedList<Integer>> res =  new Tuple<>(0,list) ;
+		res = getLongestPath( 1 , initArry , 0) ;
+		int len = res.getL();
+		
+		//LinkedList<Integer> list2 = new LinkedList<>();
+		//list2 = getLongestPath(2 , initArry , 0).getR();
+		//list2 = list;
+		System.out.println("---------longest--len------   " + len );
+		for(int i : list){
+			System.out.println("---------   " + i);
+		}
+		
+	}
+	
+	static LinkedList searchCriticalPath(int[][] initArr){
+		// Record heads from which longest path could be found
+		LinkedList<Integer> headList = new LinkedList<>();
+		LinkedList<Integer> newList = new LinkedList<>();
+		int len = 0 ;
+		int longlen = 0 ;
+		Tuple<Integer, LinkedList<Integer>> res = new Tuple<Integer, LinkedList<Integer>>(longlen,newList);
+		for(int[] line : initArr)
+			if( ! headList.contains(line[0]))
+				headList.add(line[0]);
+		for(int[] line : initArr){
+			headList.removeFirstOccurrence(line[1]);
+		}
+		
+		for (int i : headList){
+			res = getLongestPath(i, initArr, longlen).getL() > len ? getLongestPath(i, initArr, longlen) : res;
+		}
+				
+		return res.getR();
+	}
+	
+	static Tuple<Integer, LinkedList<Integer>> getLongestPath(int head, int[][] arr , int len ){
+		//Find longest path from i ;
+		LinkedList<Integer> list = new LinkedList<>();
+		LinkedList<Integer> sucList = new LinkedList<>();
+		Tuple<Integer, LinkedList<Integer>> res = new Tuple<>(len, list);
+		
+		System.out.println("----Now  "+ head + " ----is actioning ----- len  is------------  " + len);
+		
+		for(int[] line : arr)
+			if( line[0] == head){
+				sucList.add(line[1]);
+				//System.out.println("-----------line -----   " + "------"+ head + "----"+ line[1]);
+			}
+				
+		for (int suc : sucList){
+			res = getLongestPath(suc , arr, len + 1); 
+			int newLen = res.getL(); 
+			if (newLen > len){
+				len = newLen; 
+				list = res.getR();
+				
+			}
+			/**
+			len = newLen > len ? newLen : len; 
+			System.out.println("----------newLen   "+ newLen);
+			//list.add(suc);
+			//newT.getR().add(suc);
+			list =  (LinkedList<Integer>) ( newLen > len ? newT.getR(): list );
+			*/ 
+			
+		}
+		list.add(head);
+		for(int item : list)
+				System.out.println("------------item-------  " + item);
+		System.out.println("\n");
+		res = new Tuple <>(len , list );
+		
+		
+		return res ; //new Tuple<Integer, LinkedList<Integer>> (len , list);
+	}
+}

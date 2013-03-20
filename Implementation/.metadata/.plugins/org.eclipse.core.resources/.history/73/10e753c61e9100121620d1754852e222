@@ -1,0 +1,87 @@
+package smartalgorithm;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import sortAlgo.*;
+public class Executor {
+	public static void main(String[] args) throws Exception{
+		int[][] arr = {{1,2},{2,3},{4,5}} ;//{6,7},{5,2},{2,7},{6,4}};
+		int nodeNum =  5 ;
+		filterPreProcess(arr, nodeNum);
+		
+	}
+	/**
+	 * Filter out those sequences that would never occur .
+	 * Input int[][] array , output ALL possible sequence .
+	 */
+	static LinkedList<Node> nodeList = new LinkedList<>();
+	public static void filterPreProcess(int[][] arr, int nodeNum){
+		LinkedList<Integer> criticalList = new LinkedList<>();
+		LinkedList<Integer> restList = new LinkedList<>(); //Contains nodes not in criticalList .
+		criticalList = CriticalPath.searchCriticalPath(arr);
+		int restArr[] = new int[nodeNum - criticalList.size()];
+		int index = 0 ;
+		for(int i = 1 ; i <= nodeNum ; i ++)
+			if( ! criticalList.contains(i)){
+				restArr[index ++ ] = i;
+				System.out.println("-----------rest--nodes---- " + i);
+			}
+
+		nodeList = NodeInitThoughTwoDimArray.nodeInitiation_Array(arr, nodeNum, nodeList );
+		printList(nodeList.get(4).getPreList());
+		filterAndPrint(criticalList, nodeList, restArr, nodeNum ); 
+	}
+
+	public static void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 
+			int[] restArr, int nodeNum){
+		/*Let's ProProcess  to Print Them All */
+		if (criticalList.size() == nodeNum ){
+			System.out.println("------Real outPut-------- ");
+			printList(criticalList);
+		}
+		
+		if(restArr.length > 0){
+			int insertItem = restArr[0] ;
+			int counter = 0 ;
+			
+			int[] eRestArr = new int[restArr.length - 1]; 
+			for(int i = 1 ; i < restArr.length ;i ++ )
+				eRestArr[i - 1] = restArr[i];
+			
+			//Take care of the first item criticalList 
+			int item = criticalList.getFirst();
+			if( ! nodeList.get(insertItem - 1).getPreList().contains(item)){
+				/* item's preList does not contain item*/
+				LinkedList<Integer> oldCriList = new LinkedList<>();
+				NodeInitThoughTwoDimArray.copyList(criticalList, oldCriList);
+				oldCriList.add(counter, insertItem) ;
+				filterAndPrint(oldCriList, nodeList, eRestArr , nodeNum) ;
+			}
+			counter ++ ;
+			for(int i : criticalList){
+				LinkedList<Integer> oldCriList = new LinkedList<>();
+				NodeInitThoughTwoDimArray.copyList(criticalList, oldCriList);
+				if(! nodeList.get(insertItem - 1).getSucList().contains(i)){
+					if(counter >= oldCriList.size())
+						oldCriList.add(insertItem);
+					else
+						oldCriList.add(counter ,insertItem) ;
+					counter ++ ;
+					filterAndPrint(oldCriList, nodeList, eRestArr, nodeNum) ;
+					//oldCriList.removeFirstOccurrence(insertItem);
+				}
+				else break;
+			}
+		
+		}
+	}
+	
+	
+	public static void printList(List<Integer> list) {// print list .
+		Iterator<Integer> iter=list.iterator();
+		while(iter.hasNext())
+			System.out.print(iter.next()+ " ");
+		System.out.println();
+	}
+}

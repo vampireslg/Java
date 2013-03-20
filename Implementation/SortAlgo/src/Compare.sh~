@@ -1,0 +1,2 @@
+javac smartalgorithm/CompareBruteSmart.java
+java smartalgorithm.CompareBruteSmart

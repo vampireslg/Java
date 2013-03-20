@@ -1,0 +1,62 @@
+package smartalgorithm;
+import java.util.*;
+import sortAlgo.* ;
+
+public class CompareBruteSmart {
+	public  static void main(String[] args) {
+		int[] threadArr = {2, 3};
+		int[] methodArr = {2,3};
+		int nodeNum = 0 ;
+		List<Integer> initList = new LinkedList<Integer>();
+		List<Integer> outList = new LinkedList<Integer>();
+		
+		for(int th : threadArr ){
+			for(int me : methodArr){
+				// -----arr ------ nodeNum--- ARE SHARED
+				Tuple<int[][], Integer> methodPro = MethodsProducer.
+						methodsProduce( th , me );
+				int[][] arr= methodPro.getL();
+				for(int[] item : arr){
+					System.out.println("---------arr-------" +item[0]+"--------------" + item[1]);
+				}
+				nodeNum =  6 ; //th * me ;
+				// FilterSort 
+				long timeS = System.currentTimeMillis(); 
+				FilterSort.filterPreProcess(arr ,nodeNum);
+				long timeE = System.currentTimeMillis(); 
+				System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+
+				/**
+				//methodPro = MethodsProducer.methodsProduce( 2 , 2);
+				Tuple<int[][], Integer> methodPro2 = MethodsProducer.methodsProduce(2,2);
+				 arr= methodPro2.getL();
+				for(int[] item : arr){
+					System.out.println("---------arr-------" +item[0]+"--------------" + item[1]);
+				}
+				nodeNum = 4 ; //th * me ;
+				// FilterSort 
+				timeS = System.currentTimeMillis(); 
+			    FilterSort.filterPreProcess(arr ,nodeNum);
+				timeE = System.currentTimeMillis(); 
+				System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+				*/
+
+
+				//BruteSort 
+				/**for (int i = 0 ;  i < nodeNum ;  i ++ )   //initList initiation .
+					initList.add(i + 1);
+				LinkedList<Node> nodeList = new LinkedList<Node>();
+				timeS = System.currentTimeMillis();
+				NodeInitThoughTwoDimArray.nodeInitiation_Array(arr, nodeNum ,nodeList );
+				Sort.sortAndPrint(initList, (LinkedList<Integer>) outList, initList.size(), nodeList);
+				timeE = System.currentTimeMillis();
+				System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+				
+				initList.clear();
+				outList.clear();
+				nodeList.clear();
+				*/
+			}
+		}
+	}
+}

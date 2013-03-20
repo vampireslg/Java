@@ -6,30 +6,35 @@ public class MethodsProducer {
 	/**
 	 * Randomly produce methods with partial order 
 	 */
-	final static int THREADS = 3 ;
-	final static int M_PerTHREAD = 10; // method per thread
-	final static double ratio  = M_PerTHREAD / THREADS;
-	static Tuple<int[][] , Integer> methodsProduce(){
-		//	int methodsNum = THREADS*M_PerTHREAD;
-		int tie = 0 ; // Number of children nodes a node could has
-		
+	public static Tuple<int[][] , Integer> methodsProduce(int threads, int methods){
+		//	int methodsNum = THREADS*methods;
+		int maxTry = 0 ; // Number of children nodes a node could has
 		List<Integer> preList = new LinkedList<Integer>();
 		List<Integer> sucList = new LinkedList<Integer>();
-		for (int t = 0 ; t < THREADS ;t ++ ){
-			for(int m = 1 ; m < M_PerTHREAD; m ++ ){
-				preList.add(t  * M_PerTHREAD + m);
-				sucList.add(t  * M_PerTHREAD + m + 1);
-				Random rand = new Random(45);
-				int vic = rand.nextInt(THREADS);
-				while(vic > 3 && tie < M_PerTHREAD){// Pick a victim with probability over 60%  
-					if (vic == t)  ; 
+		Random rand = new Random(47);
+		Random proR = new Random(47);
+		for (int t = 0 ; t < threads ;t ++ ){
+			for(int m = 1 ; m < methods; m ++ ){
+				preList.add(t  * methods + m);
+				sucList.add(t  * methods + m + 1);
+								
+				int vicT = rand.nextInt(threads);
+				int vicM = rand.nextInt(methods + 1);
+				int pro = proR.nextInt(10);
+				while(pro > 2 && maxTry < threads * methods){// Pick a victim with probability over 70%  
+					if (vicT == t)  ; // victim could not be itself ;
 					else{
-						preList.add( t  * M_PerTHREAD + m);
-						sucList.add(vic*(ratio) > m ? ((vic - 1) * M_PerTHREAD + (int )(vic * ratio))
-								:((vic - 1)*M_PerTHREAD + m + 1));
+						if(vicM <= m) //victim Methods should has larger index 
+							;
+						else{
+							preList.add( t  * methods + m);
+							sucList.add(vicT * methods + vicM );
+						}
 					}
-					vic = rand.nextInt(THREADS);
-					tie ++ ;
+					vicT = rand.nextInt(threads);
+					vicM = rand.nextInt(methods);
+					pro = proR.nextInt(10);
+					maxTry ++ ;
 				}
 			}
 		}//for
@@ -42,6 +47,6 @@ public class MethodsProducer {
 			//System.out.println("Line --- " + len + " --- Column ------" + 2 + " ---- SucValue : -----" + orderArr[len][1]);
 		}
 				
-		return new Tuple<int[][], Integer> (orderArr , (THREADS)*M_PerTHREAD);
+		return new Tuple<int[][], Integer> (orderArr , (threads)*methods);
 	}
 }

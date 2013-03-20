@@ -3,18 +3,23 @@ import java.util.ArrayList;
 
 public class ListPrint {
 	public static void main(String[] args) {
+		long startTime = System.currentTimeMillis();
 		ArrayList<Object> list=new ArrayList<Object>();
-		list.add("1");list.add("2");list.add("3");
-		list.add("4");
+		for(int i = 1 ; i < 30; i ++ )
+			list.add(i);
 		printall(list, "", list.size(), 0);
-		int[] arr = {2,1,4,3};
-		for(int i : arr)
+		/* int[] arr =  {2,1,4,3}; */
+		/**
+		 * for(int i : arr)
+		 *
 			System.out.println(i );
-	}
+		 */
+		long endTime = System.currentTimeMillis(); 
+		System.out.println("<-----Time-Consumed------:" + (endTime - startTime) + " -----Millis -------->") ;
 
+	}
 	private static void printall(ArrayList<Object> list, String str,
 			int size, int i) {
-		// TODO Auto-generated method stub
 		Print.printAll(list, str, size, i);
 	}
 }
@@ -22,7 +27,7 @@ public class ListPrint {
 class Print{
 	public static void printAll(ArrayList<Object> candidate, Object out,int length, int outlen){
 		if(outlen == length){
-			print(out);
+			//print(out);
 			//System.out.println(" ********************* ");
 		}
 		for (int i = 0; i < candidate.size(); i++) {
@@ -30,9 +35,5 @@ class Print{
 			printAll(tmList, out + " " + tmList.remove(i), length ,outlen + 1);
 		}
 	}
-	
-	private static void print(Object out) {
-		// TODO Auto-generated method stub
-		System.out.println(out);
-	}
+
 }

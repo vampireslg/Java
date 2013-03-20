@@ -1,0 +1,3 @@
+javac smartalgorithm/FilterSort.java
+java smartalgorithm.FilterSort > resFilter.re
+emacs -nw resFilter.re

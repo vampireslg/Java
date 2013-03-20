@@ -1,0 +1,5 @@
+-----FILTER Sort With Threads * Methods = 3 * 2  Time Consumed : 3 Millis -------.
+-----FILTER Sort With Threads * Methods = 3 * 3  Time Consumed : 28 Millis -------.
+-----FILTER Sort With Threads * Methods = 3 * 5  Time Consumed : 399 Millis -------.
+-----FILTER Sort With Threads * Methods = 5 * 2  Time Consumed : 27 Millis -------.
+-----FILTER Sort With Threads * Methods = 5 * 3  Time Consumed : 43115 Millis -------.

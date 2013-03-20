@@ -1,0 +1,2 @@
+javac smartalgorithm/CriticalPath.java
+java smartalgorithm.CriticalPath

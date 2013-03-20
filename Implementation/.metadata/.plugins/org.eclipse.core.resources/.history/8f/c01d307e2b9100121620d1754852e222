@@ -1,0 +1,32 @@
+package smartalgorithm;
+import java.util.*;
+import sortAlgo.* ;
+
+public class CompareBruteSmart {
+	public static void main(String[] args) {
+		long timeS = System.currentTimeMillis(); 
+		int[][] arr = {{1,2},{2,3},{3,4},{5,6},{6,7},{5,2},{2,7},{6,4}};
+		int nodeNum =  7 ;
+		Executor.filterPreProcess(arr, nodeNum);
+		long timeE = System.currentTimeMillis(); 
+		System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+		
+		
+		
+		List<Integer> initList = new LinkedList<Integer>();
+		List<Integer> outList = new LinkedList<Integer>();
+		Tuple<int[][], Integer> methodPro = MethodsProducer.methodsProduce();
+		int[][] tupleArr = methodPro.getL();
+		nodeNum = methodPro.getR();
+		
+		
+		for (int i = 0 ;  i < nodeNum ;  i ++ )   /**initList initiation .*/
+			initList.add(i + 1);
+		LinkedList<Node> nodeList = new LinkedList<Node>();
+		timeS = System.currentTimeMillis();
+		NodeInitThoughTwoDimArray.nodeInitiation_Array(tupleArr, nodeNum ,nodeList );
+		Sort.sortAndPrint(initList, (LinkedList<Integer>) outList, initList.size(), nodeList);
+		timeE = System.currentTimeMillis();
+		System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+	}
+}

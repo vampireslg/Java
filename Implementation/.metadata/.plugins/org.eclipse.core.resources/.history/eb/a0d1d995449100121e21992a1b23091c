@@ -1,0 +1,43 @@
+package smartalgorithm;
+import java.util.*;
+import sortAlgo.* ;
+
+public class CompareBruteSmart {
+	public static void main(String[] args) {
+		int[] threadArr = {2,3,5,10};
+		int[] methodArr = {3,5,10};
+		int nodeNum = 0 ;
+		List<Integer> initList = new LinkedList<Integer>();
+		List<Integer> outList = new LinkedList<Integer>();
+		
+	//	for(int th = 0 ; th < threadArr.length ; th ++ )
+		//	for(int me = 0 ; me < methodArr.length; me ++){
+				// -----arr ------ nodeNum--- ARE SHARED
+				Tuple<int[][], Integer> methodPro = MethodsProducer.methodsProduce(2, 3);
+				int[][] arr= {{2,3},{3,4},{1,5}}; 
+				//arr = methodPro.getL();
+				nodeNum = methodPro.getR();
+				System.out.println("------------NodeNum-------------" + nodeNum);
+				// FilterSort 
+			
+				long timeS = System.currentTimeMillis(); 
+				FilterSort.filterPreProcess(methodPro.getL(), nodeNum);
+				long timeE = System.currentTimeMillis(); 
+				System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+
+
+
+				//BruteSort 
+				for (int i = 0 ;  i < nodeNum ;  i ++ )   //initList initiation .
+					initList.add(i + 1);
+				LinkedList<Node> nodeList = new LinkedList<Node>();
+				timeS = System.currentTimeMillis();
+				NodeInitThoughTwoDimArray.nodeInitiation_Array(arr, nodeNum ,nodeList );
+				Sort.sortAndPrint(initList, (LinkedList<Integer>) outList, initList.size(), nodeList);
+				timeE = System.currentTimeMillis();
+				System.out.println("Time------Consumed : "+ (timeE - timeS) + " Millis .");
+				nodeList.clear();
+				
+			}
+	//}
+}

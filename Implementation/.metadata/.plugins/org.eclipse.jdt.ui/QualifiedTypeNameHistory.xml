@@ -45,4 +45,5 @@
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 <fullyQualifiedTypeName name="sortAlgo.GetCloneObject"/>
+<fullyQualifiedTypeName name="sortAlgo.Tuple"/>
 </qualifiedTypeNameHistroy>
