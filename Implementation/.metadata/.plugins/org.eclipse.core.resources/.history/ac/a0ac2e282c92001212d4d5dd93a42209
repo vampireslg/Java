@@ -1,0 +1,58 @@
+package smartalgorithm;
+import java.util.*;
+
+public class HashSort {
+	int nodeNum; 
+	void filterAndPrint(HashMap hm){
+		
+	}
+	void initLocMap(int[][] initArr){
+		//locMap Key : location ; Value : node's value .
+		
+		LinkedList<Integer> criticalL =  CriticalPath.searchCriticalPath(initArr);
+		int csize = criticalL.size();
+		HashMap<Integer, Integer> locMap = new HashMap<>();
+		int con = 0 ;
+		for (int item : criticalL){
+			locMap.put(con ++ , item);
+		}
+		for(; con < nodeNum; ){// Rest location in critical path stores 0 ;
+			locMap.put(con ++ , 0 );
+		}
+		
+	}
+	
+	int locPreSlot(int item, HashMap<Integer, Integer> hm){
+		int res = 0 ; 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		return res ; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,3 @@
+1. The FilterSort algo takes 12511.44 seconds (about 3Hour 28Minus 30Sec) to produce a file with size of 18GB after sorted all the possible permutation of 21(1..21) number with some partial orders .
+Totally 338826816 possible permutation . 
+

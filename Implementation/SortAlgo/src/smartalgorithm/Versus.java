@@ -19,13 +19,14 @@ public class Versus {
 				
 				nodeNum =  th * me; //th * me ;
 				// FilterSort 
+				FilterSort fs = new FilterSort();
 				long timeS = System.currentTimeMillis(); 
-				FilterSort.filterPreProcess(arr ,nodeNum);
+				fs.filterPreProcess(arr ,nodeNum);
 				long timeE = System.currentTimeMillis(); 
 				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
 
-
+				HashMap 
 				//BruteSort 
 				for (int i = 0 ;  i < nodeNum ;  i ++ )   //initList initiation .
 					initList.add(i + 1);

@@ -1,2 +1,2 @@
-javac smartalgorithm/CompareBruteSmart.java
-java smartalgorithm.CompareBruteSmart
+javac smartalgorithm/Versus.java
+java smartalgorithm.Versus

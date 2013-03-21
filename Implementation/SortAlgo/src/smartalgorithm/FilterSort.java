@@ -6,21 +6,25 @@ import java.util.List;
 import sortAlgo.*;
 public class FilterSort {
 	public  static void main(String[] args) throws Exception{
-	int[] threadArr = {3, 5};
-		int[] methodArr = {2, 3, 5};
+	int[] threadArr = {4};
+		int[] methodArr = {5};
 		int nodeNum = 0 ;
-				
+		FilterSort fs = new FilterSort();
 		for(int th : threadArr ){
 			for(int me : methodArr){
 				// -----arr ------ nodeNum--- ARE SHARED
 				Tuple<int[][], Integer> methodPro = MethodsProducer.
 						methodsProduce( th , me);
-				int[][] arr= methodPro.getL();
+				ReadData rd = new ReadData();
+				int[][] arr= rd.arrProduce("poarr.dat") ;
+						//methodPro.getL();
+				for(int[] row : arr)
+					//System.out.println("------" + row[0] + "---------"+ row[1]);
 				
 				nodeNum =  th * me; //th * me ;
 				// FilterSort 
 				long timeS = System.currentTimeMillis(); 
-				FilterSort.filterPreProcess(arr ,nodeNum);
+				fs.filterPreProcess(arr, 21);
 				long timeE = System.currentTimeMillis(); 
 				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
@@ -32,7 +36,7 @@ public class FilterSort {
 	 * Filter out those sequences that would never occur .
 	 * Input int[][] array , output ALL possible sequence .
 	 */
-	public static void filterPreProcess(int[][] arr, int nodeNum){
+	public  void filterPreProcess(int[][] arr, int nodeNum){
 		LinkedList<Integer> criticalList = new LinkedList<>();
 		criticalList = CriticalPath.searchCriticalPath(arr);
 		int restArr[] = new int[nodeNum - criticalList.size()];
@@ -47,11 +51,11 @@ public class FilterSort {
 		filterAndPrint(criticalList, nodeList, restArr, nodeNum ); 
 	}
 
-	public static void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 
+	public  void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 
 			int[] restArr, int nodeNum){
 		/*Let's ProProcess  to Print Them All */
 		if (criticalList.size() == nodeNum ){
-			//printList(criticalList);
+			printList(criticalList);
 		}
 		
 		if(restArr.length > 0){
@@ -71,38 +75,45 @@ public class FilterSort {
 			counter = lpl ;
 			for(;counter < fsl; ){
 				LinkedList<Integer> oldCriList = new LinkedList<>();
-				NodeListInit.copyList(criticalList, oldCriList);
+				copyList(criticalList, oldCriList);
 				oldCriList.add(counter ,insertItem) ;
 				filterAndPrint(oldCriList, nodeList, eRestArr, nodeNum) ;
 				counter ++;
 			}
-		
 		}
 	}
-	
-	 static int lastPreLoc(int item, LinkedList<Integer> list , LinkedList<Node> nodeList ){
-		 /* Return 0 means no item in criticalPath as its PRE , loc is the last location([1 .. size()]) of node as its PRE */
-		 int loc = 0 ,aux = 0 ;
-		 for(int citem : list ){
-			 aux ++;
-			 if(nodeList.get(citem - 1).getSucList().contains(item))
-				 loc = aux ;
-		 }
-		 return loc ;
-	 }
-	 
-	  static int firstSucLoc(int item, LinkedList<Integer> list , LinkedList<Node> nodeList ){
-		  /* Return list.size()means no item in criticalPath as its SUC , loc is the first location ([0..size - 1])of node as its SUC */
-		 int loc = list.size() + 1 ,aux = 0 ;
-		 for(int citem : list ){
-			 aux ++ ;
-			 if(nodeList.get(item - 1).getSucList().contains(citem))
-				 return aux ;
-		 }
-		 return loc ;
-	 }
-	
-	public static void printList(List<Integer> list) {// print list .
+
+	void copyList(LinkedList<Integer> la, LinkedList<Integer> lb){
+		Iterator<Integer> iter = la.iterator();
+		while(iter.hasNext()){
+			int item = iter.next();
+			lb.add(item);
+		}
+	}
+
+	int lastPreLoc(int item, LinkedList<Integer> list , LinkedList<Node> nodeList ){
+		/* Return 0 means no item in criticalPath as its PRE , loc is the last location([1 .. size()]) of node as its PRE */
+		int loc = 0 ,aux = 0 ;
+		for(int citem : list ){
+			aux ++;
+			if(nodeList.get(citem - 1).getSucList().contains(item))
+				loc = aux ;
+		}
+		return loc ;
+	}
+
+	int firstSucLoc(int item, LinkedList<Integer> list , LinkedList<Node> nodeList ){
+		/* Return list.size()means no item in criticalPath as its SUC , loc is the first location ([0..size - 1])of node as its SUC */
+		int loc = list.size() + 1 ,aux = 0 ;
+		for(int citem : list ){
+			aux ++ ;
+			if(nodeList.get(item - 1).getSucList().contains(citem))
+				return aux ;
+		}
+		return loc ;
+	}
+
+	public void printList(List<Integer> list) {// print list .
 		Iterator<Integer> iter=list.iterator();
 		while(iter.hasNext())
 			System.out.print(iter.next()+ " ");

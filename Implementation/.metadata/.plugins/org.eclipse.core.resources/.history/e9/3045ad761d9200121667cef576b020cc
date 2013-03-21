@@ -1,0 +1,16 @@
+package smartalgorithm;
+import java.util.*;
+public class HashNode<L, P, S>{
+	L loc ; 
+	P pres;
+	S sucs; 
+	HashNode(L loc, P pres, S sucs){
+		this.loc = loc ;
+		this.pres = p; 
+		this.sucs = s;
+	}
+
+	L getL(){
+		return loc ;
+	}
+}

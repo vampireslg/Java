@@ -9,16 +9,16 @@ public class CriticalPath {
 	 * Return result in form of List .
 	 */
 	public static void main(String[] args) throws Exception{
+	    CriticalPath cp = new CriticalPath();
 		int[][] initArry = {{1,8},{8,3},{3,10},{4,5},{5,6},{6,7},{5,7},{7,10},{2,4}};
 		LinkedList<Integer> list = new LinkedList<>();
-		list = searchCriticalPath(initArry); 
+		list = cp.searchCriticalPath(initArry); 
 		for(int i : list){
 			System.out.println("---------   " + i);
 		}
-		
 	}
 	
-	static LinkedList<Integer> searchCriticalPath(int[][] initArr){
+	LinkedList<Integer> searchCriticalPath(int[][] initArr){
 		// Record heads from which longest path could be found
 		LinkedList<Integer> headList = new LinkedList<>();
 		LinkedList<Integer> resList = new LinkedList<>();
@@ -47,7 +47,7 @@ public class CriticalPath {
 		return headList; 
 	}
 	
-	static Tuple<Integer, LinkedList<Integer>> getLongestPath(int head, int[][] arr , int len ){
+	 Tuple<Integer, LinkedList<Integer>> getLongestPath(int head, int[][] arr , int len ){
 		//Find longest path from i ;
 		LinkedList<Integer> list = new LinkedList<>();
 		LinkedList<Integer> sucList = new LinkedList<>();

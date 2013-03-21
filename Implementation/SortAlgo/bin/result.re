@@ -1,31 +1,16 @@
----------arr-------1--------------2
----------arr-------1--------------4
----------arr-------3--------------4
-3 1 4 2 
-3 1 2 4 
-1 3 4 2 
-1 3 2 4 
-1 2 3 4 
-Time------Consumed : 2 Millis .
----------arr-------1--------------2
----------arr-------1--------------5
----------arr-------2--------------3
----------arr-------4--------------5
----------arr-------4--------------3
----------arr-------5--------------6
-Time------Consumed : 0 Millis .
----------arr-------1--------------2
----------arr-------1--------------6
----------arr-------3--------------4
----------arr-------5--------------6
-Time------Consumed : 0 Millis .
----------arr-------1--------------2
----------arr-------1--------------5
----------arr-------1--------------5
----------arr-------2--------------3
----------arr-------4--------------5
----------arr-------4--------------3
----------arr-------5--------------6
----------arr-------7--------------8
----------arr-------8--------------9
-Time------Consumed : 0 Millis .
+-----FILTER Sort With Threads * Methods = 2 * 2  Time Consumed : 2 Millis -------.
+-----BRUTE  Sort With Threads * Methods = 2 * 2  Time Consumed : 2 Millis ------.
+
+
+-----FILTER Sort With Threads * Methods = 2 * 3  Time Consumed : 0 Millis -------.
+-----BRUTE  Sort With Threads * Methods = 2 * 3  Time Consumed : 36 Millis ------.
+
+
+-----FILTER Sort With Threads * Methods = 3 * 2  Time Consumed : 1 Millis -------.
+-----BRUTE  Sort With Threads * Methods = 3 * 2  Time Consumed : 10 Millis ------.
+
+
+-----FILTER Sort With Threads * Methods = 3 * 3  Time Consumed : 8 Millis -------.
+-----BRUTE  Sort With Threads * Methods = 3 * 3  Time Consumed : 738 Millis ------.
+
+

@@ -1,0 +1,10 @@
+package smartalgorithm;
+import java.util.*;
+
+public class HashSort {
+	
+	void sortAndPrint(HashMap hm){
+		
+	}
+
+}

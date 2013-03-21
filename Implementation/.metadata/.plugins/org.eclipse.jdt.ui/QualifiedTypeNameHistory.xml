@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="print.Print"/>
 <fullyQualifiedTypeName name="java.security.PublicKey"/>
 <fullyQualifiedTypeName name="UnboundedDEQueue"/>
-<fullyQualifiedTypeName name="java.lang.Readable"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.util.AbstractSequentialList"/>
@@ -17,7 +16,6 @@
 <fullyQualifiedTypeName name="javax.sound.sampled.ReverbType"/>
 <fullyQualifiedTypeName name="concurrentStructure.RemoveVSGet"/>
 <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicReferenceArray"/>
 <fullyQualifiedTypeName name="java.lang.SafeVarargs"/>
 <fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicBoolean"/>
@@ -34,10 +32,8 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="javax.swing.event.AncestorEvent"/>
 <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.prefs.BackingStoreException"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -46,4 +42,14 @@
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 <fullyQualifiedTypeName name="sortAlgo.GetCloneObject"/>
 <fullyQualifiedTypeName name="sortAlgo.Tuple"/>
+<fullyQualifiedTypeName name="sortAlgo.MethodsProducer"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="smartalgorithm.CriticalPath"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="smartalgorithm.ReadData"/>
+<fullyQualifiedTypeName name="smartalgorithm.FilterSort"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>
