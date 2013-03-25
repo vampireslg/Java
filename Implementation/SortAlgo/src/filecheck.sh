@@ -1,0 +1,19 @@
+#!/bin/bash
+#Program
+# Check a file of following :
+# 1. > exist ? 2 > file/directory ? 3 > file permissions 
+#history
+#Mar_25 2013 Author: A.C.God First Release
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+echo -e "Please input a filename to check out !"
+read -p "Input a filename : " filename
+test -z $filename && echo "Input a file AssHole !!! " && exit 0
+test ! -e $filename && echo " This file does not existed " && exit 0
+test -f $filename && filetype="regulare file"
+test -d $filename && filetype="directory"
+test -r $filename && perm="readable"
+test -w $filename && perm="$perm writable"
+test -x $filename && perm="$perm executable"
+echo "The filename : $filename is a $filetype "
+echo "And the permission are : $perm"

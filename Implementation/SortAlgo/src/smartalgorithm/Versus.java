@@ -4,8 +4,8 @@ import sortAlgo.* ;
 
 public class Versus {
 	public  static void main(String[] args) {
-		int[] threadArr = {2, 3};
-		int[] methodArr = {2, 3};
+		int[] threadArr = { 3};
+		int[] methodArr = {5 };
 		int nodeNum = 0 ;
 		List<Integer> initList = new LinkedList<Integer>();
 		List<Integer> outList = new LinkedList<Integer>();
@@ -26,8 +26,9 @@ public class Versus {
 				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
 
-				HashMap 
-				//BruteSort 
+				
+				//BruteSort
+				/**
 				for (int i = 0 ;  i < nodeNum ;  i ++ )   //initList initiation .
 					initList.add(i + 1);
 				LinkedList<Node> nodeList = new LinkedList<Node>();
@@ -42,6 +43,7 @@ public class Versus {
 				initList.clear();
 				outList.clear();
 				nodeList.clear();
+				*/
 				
 			}
 		}

@@ -1,3 +1,4 @@
 javac smartalgorithm/FilterSort.java
-java smartalgorithm.FilterSort > resFilter.re 2>error.er
-emacs -nw resFilter.re
+java smartalgorithm.FilterSort > 2*20res.se
+cat 2*20res.se
+

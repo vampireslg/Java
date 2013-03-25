@@ -1,0 +1,67 @@
+package smartalgorithm;
+
+import java.rmi.Remote;
+import java.util.LinkedList;
+
+import javax.xml.soap.Node;
+
+import sortAlgo.NodeListInit;
+
+public class ConcFilterSort {
+	
+	int[][] removeHead(int[][] arr ,int head){		
+		//remove all tuples with head be first elements ,E.G. head = 1 , remove [1,2] ...
+		//Remember to take isolated point into consideration 
+		int counter = 0 , i = 0 ;
+		for(int[] row : arr){
+			if (row[0] == head) 
+				;
+			else
+				counter ++ ;
+		}
+		//counter -- the length of new array ;
+		int[][] newArr = new int[counter][2] ;
+		for(int[] row : arr){
+			if(row[0] == head)
+				;
+			else if(row[0] > head){
+				newArr[i][0] = row[0] - 1 ;
+				if (row[1] > head)
+					newArr[i][1] = row[1] - 1;
+				else 
+					newArr[i][1] = row[1] ;
+				i ++ ;
+			}
+			else{
+				newArr[i][0] = row[0] ;
+				if(row[1] > head)
+					newArr[i][1] = row[1] - 1;
+				else 
+					newArr[i][1] = row[1] ;
+				i ++ ;
+			}
+		}
+		return newArr; 
+	}
+}
+
+class DivideWork extends Thread{
+	int [][] arr ; 
+	int head , nodeNum ;
+	public DivideWork(int[][] arr ,int head , int nodeNum) {
+		this.arr = arr ;
+		this.head = head ;
+		this.nodeNum = nodeNum ;
+	}
+	public void run(){
+		ConcFilterSort cfs = new ConcFilterSort();
+		FilterSort fs= new FilterSort();
+		int[][] restArr = cfs.removeHead(arr, head);
+		for(int[] row : restArr){
+			System.out.println("------------Current restArr------------" + head );
+			System.out.println("----" + row[0] + "--------" + row[1]);
+		}
+		System.out.println(this);
+		fs.filterPreProcess(restArr, nodeNum - 1);
+	}
+}

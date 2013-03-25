@@ -1,0 +1,68 @@
+package smartalgorithm;
+
+import java.rmi.Remote;
+import java.util.LinkedList;
+
+import javax.xml.soap.Node;
+
+import sortAlgo.NodeListInit;
+
+public class ConcFilterSort {
+	
+	int[][] removeHead(int[][] arr ,int head){		
+		//remove all tuples with head be first elements ,E.G. head = 1 , remove [1,2] ...
+		//Remember to take isolated point into consideration 
+		int counter = 0 , i = 0 ;
+		for(int[] row : arr){
+			if (row[0] == head) 
+				counter ++ ;
+		}
+		counter = arr.length - counter ;						// length of new array ;
+		int[][] newArr = new int[counter][] ;
+		for(int[] row : arr){
+			if(row[0] == head)
+				;
+			else if(row[0] > head){
+				row[0] -- ;
+				row[1] -- ;
+				newArr[i++] = row ;
+			}
+		}
+		return newArr; 
+	}
+}
+
+class DivideWork extends Thread{
+	int [][] arr ; 
+	int head , nodeNum ;
+	public DivideWork(int[][] arr ,int head , int nodeNum) {
+		this.arr = arr ;
+		this.head = head ;
+		this.nodeNum = nodeNum ;
+	}
+	public void run(){
+		ConcFilterSort cfs = new ConcFilterSort();
+		int[][] restArr = cfs.removeHead(arr, head);
+		for(int[] row : restArr)
+			System.out.println(this + "---------" + row[0] + "---" + row[1]);
+		permutation(restArr, nodeNum - 1);
+	}
+	
+	public  void permutation(int[][] arr, int nodeNum){
+		// Rewrite the rest array (Not include head ) 
+		LinkedList<Integer> criticalList = new LinkedList<>();
+		CriticalPath cp = new CriticalPath()	;
+		criticalList = cp.searchCriticalPath(arr);
+		int restArr[] = new int[nodeNum - criticalList.size()];
+		int index = 0 ;
+		for(int i = 1 ; i <= nodeNum ; i ++)
+			if( ! criticalList.contains(i) && i != head){
+				restArr[index ++ ] = i;
+			}
+		NodeListInit nli = new NodeListInit();
+		FilterSort fs = new FilterSort() ;
+		LinkedList<sortAlgo.Node> nodeList = nli.nodeInitiation_Array(arr, nodeNum );
+		//fs.filterAndPrint(criticalList, nodeList, restArr, nodeNum );
+				
+	}
+}

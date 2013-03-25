@@ -1,0 +1,16 @@
+-----Totally--Permuation ----15
+-----FILTER Sort With Threads * Methods = 2 * 3  Time Consumed : 2 Millis -------.
+-----Totally--Permuation ----70
+-----FILTER Sort With Threads * Methods = 2 * 4  Time Consumed : 3 Millis -------.
+-----Totally--Permuation ----251
+-----FILTER Sort With Threads * Methods = 2 * 5  Time Consumed : 12 Millis -------.
+-----Totally--Permuation ----504
+-----FILTER Sort With Threads * Methods = 2 * 6  Time Consumed : 15 Millis -------.
+-----Totally--Permuation ----3052
+-----FILTER Sort With Threads * Methods = 2 * 7  Time Consumed : 29 Millis -------.
+-----Totally--Permuation ----1492062
+-----FILTER Sort With Threads * Methods = 2 * 12  Time Consumed : 2580 Millis -------.
+-----Totally--Permuation ----6065164
+-----FILTER Sort With Threads * Methods = 2 * 13  Time Consumed : 11808 Millis -------.
+-----Totally--Permuation ----90421528
+-----FILTER Sort With Threads * Methods = 2 * 15  Time Consumed : 236043 Millis -------.

@@ -1,0 +1,9 @@
+-----------------------Test------------------------
+-----Totally--Permutation ---- 19305
+-----FILTER Sort With Threads * Methods = 3 * 4  Time Consumed : 107 Millis -------.
+-----Totally--Permutation ---- 489835
+-----FILTER Sort With Threads * Methods = 3 * 5  Time Consumed : 202 Millis -------.
+-----Totally--Permutation ---- 48237535
+-----FILTER Sort With Threads * Methods = 4 * 4  Time Consumed : 27710 Millis -------.
+-----Totally--Permutation ---- 866305775
+-----FILTER Sort With Threads * Methods = 4 * 5  Time Consumed : 3208422 Millis -------.

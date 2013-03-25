@@ -11,3 +11,4 @@
 1363788873767	Rename type 'NodeListInitiationThoughTuple'
 1363789147712	Rename type 'CompareBruteSmart'
 1363863756378	Delete element
+1363924082362	Infer generic type arguments

@@ -24,9 +24,9 @@ public class BruteSort {
 		
 		for (int i = 0 ;  i < nodeNum ;  i ++ )   /**initList initiation .*/
 			initList.add(i + 1);
-		
+		NodeListInit nli = new NodeListInit();
 		LinkedList<Node> newNodeList = 
-		NodeListInit.nodeInitiation_Array(tupleArr, nodeNum);
+		nli.nodeInitiation_Array(tupleArr, nodeNum);
 		
 		Sort.sortAndPrint(initList, (LinkedList<Integer>) outList, initList.size(), newNodeList);
 		

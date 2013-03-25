@@ -1,2 +1,2 @@
-javac smartalgorithm/Versus.java
-java smartalgorithm.Versus
+./runtest.sh >> temp.nt
+

@@ -1,0 +1,38 @@
+package smartalgorithm;
+
+import java.rmi.Remote;
+
+public class ConcFilterSort {
+	
+	int[][] removeHead(int[][] arr ,int head){		
+		//remove all tuples with head be first elements ,E.G. head = 1 , remove [1,2] ...
+		//Remember to take isolated point into consideration 
+		int counter = 0 , i = 0 ;
+		for(int[] row : arr){
+			if (row[0] == head) 
+				counter ++ ;
+		}
+		counter = arr.length - counter ;						// length of new array ;
+		int[][] newArr = new int[counter][] ;
+		for(int[] row : arr){
+			if(row[0] == head)
+				;
+			else
+				newArr[i++] = row ;
+		}
+		return newArr; 
+	}
+}
+
+class DivideWork extends Thread{
+	int [][] arr ; 
+	int head; 
+	public DivideWork(int[][] arr ,int head) {
+		this.arr = arr ;
+		this.head = head ;
+	}
+	public void run(){
+		ConcFilterSort cfs = new ConcFilterSort();
+		int[][] newArr = cfs.removeHead(arr, head);
+	}
+}

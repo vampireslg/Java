@@ -1,0 +1,2 @@
+javac smartalgorithm/RunTestMulti.java
+java smartalgorithm/RunTestMulti

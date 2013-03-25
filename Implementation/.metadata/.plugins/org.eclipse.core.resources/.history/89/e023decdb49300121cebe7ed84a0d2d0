@@ -1,0 +1,51 @@
+package smartalgorithm;
+
+import sortAlgo.MethodsProducer;
+import sortAlgo.Tuple;
+
+public class RunTest {
+	public static void main(String[] args) {
+
+		int[][] initArr = {{1,2},{2,3},{3,4},{4,5},{2,6},{2,7}};
+		HashSort hs = new HashSort(5,7);
+		System.out.println("-----------------------Test------------------------");
+		//hs.printResult(initArr);
+		
+		int[] threadArr = {2};
+		int[] methodArr = {5};
+		int nodeNum = 0 ;
+		FilterSort fs = new FilterSort();
+		for(int th : threadArr ){
+			for(int me : methodArr){
+				// -----arr ------ nodeNum--- ARE SHARED
+				Tuple<int[][], Integer> methodPro = MethodsProducer.
+						methodsProduce( th , me);
+				//ReadData rd = new ReadData();
+				int[][] arr= methodPro.getL();
+						//methodPro.getL();
+				for(int[] row : arr)
+					System.out.println("------" + row[0] + "---------"+ row[1]);
+				
+				nodeNum =  th * me; //th * me ;
+				// FilterSort 
+				long timeS = System.currentTimeMillis(); 
+				fs.filterPreProcess(arr, nodeNum);
+				
+				long timeE = System.currentTimeMillis(); 
+				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
+						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				HashSort newhs = new HashSort(th, me);
+				
+				timeS = System.currentTimeMillis(); 
+				newhs.printResult(arr);
+				timeE = System.currentTimeMillis(); 
+				System.out.println("----- HASH  Sort With Threads * Methods = " +  th + " * " + me + 
+						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
+				
+				
+			}
+		}
+		
+	}
+}

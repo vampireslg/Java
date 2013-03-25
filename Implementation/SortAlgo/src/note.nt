@@ -1,3 +1,20 @@
 1. The FilterSort algo takes 12511.44 seconds (about 3Hour 28Minus 30Sec) to produce a file with size of 18GB after sorted all the possible permutation of 21(1..21) number with some partial orders .
 Totally 338826816 possible permutation . 
 
+2.
+-----Totally--Permuation ----1260
+-----FILTER Sort With Threads * Methods = 3 * 3  Time Consumed : 25 Millis -------.
+-----Totally--Permuation ----19305
+-----FILTER Sort With Threads * Methods = 3 * 4  Time Consumed : 42 Millis -------.
+-----Totally--Permuation ----470530
+-----FILTER Sort With Threads * Methods = 3 * 5  Time Consumed : 174 Millis -------.
+-----Totally--Permuation ----227920
+-----FILTER Sort With Threads * Methods = 4 * 3  Time Consumed : 72 Millis -------.
+-----Totally--Permuation ----47747700
+-----FILTER Sort With Threads * Methods = 4 * 4  Time Consumed : 16641 Millis -------.
+-----Totally--Permuation ----818068240
+-----FILTER Sort With Threads * Methods = 4 * 5  Time Consumed : 2023526 Millis(33.5 mins)
+-----Totally--Permuation ----63792400
+-----FILTER Sort With Threads * Methods = 5 * 3  Time Consumed : 18549 Millis 
+-----Totally--Permuation -----430988244
+-----FILTER Sort With Threads * Methods = 5 * 4  Time Consumed : 36969717 Millis(10.27hours)

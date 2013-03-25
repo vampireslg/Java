@@ -1,3 +1,0 @@
-java.lang.ArrayIndexOutOfBoundsException: 55
-	at smartalgorithm.ReadData.arrProduce(ReadData.java:24)
-	at smartalgorithm.FilterSort.main(FilterSort.java:19)

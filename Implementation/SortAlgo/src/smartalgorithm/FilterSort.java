@@ -5,31 +5,13 @@ import java.util.List;
 
 import sortAlgo.*;
 public class FilterSort {
+	volatile int perCounter = 0 ;
+	
 	public  static void main(String[] args) throws Exception{
-	int[] threadArr = {4};
-		int[] methodArr = {5};
-		int nodeNum = 0 ;
+		int[][] initArr = {{1,2},{3,4},{5,6},{6,7},{7,8},{8,9},{2,3}};
 		FilterSort fs = new FilterSort();
-		for(int th : threadArr ){
-			for(int me : methodArr){
-				// -----arr ------ nodeNum--- ARE SHARED
-				Tuple<int[][], Integer> methodPro = MethodsProducer.
-						methodsProduce( th , me);
-				ReadData rd = new ReadData();
-				int[][] arr= rd.arrProduce("poarr.dat") ;
-						//methodPro.getL();
-				for(int[] row : arr)
-					//System.out.println("------" + row[0] + "---------"+ row[1]);
-				
-				nodeNum =  th * me; //th * me ;
-				// FilterSort 
-				long timeS = System.currentTimeMillis(); 
-				fs.filterPreProcess(arr, 21);
-				long timeE = System.currentTimeMillis(); 
-				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
-						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-			}
-		}
+		fs.filterPreProcess(initArr, 9);
+	    
 	} //Main
 	
 	/**
@@ -38,7 +20,8 @@ public class FilterSort {
 	 */
 	public  void filterPreProcess(int[][] arr, int nodeNum){
 		LinkedList<Integer> criticalList = new LinkedList<>();
-		criticalList = CriticalPath.searchCriticalPath(arr);
+		CriticalPath cp = new CriticalPath()	;
+		criticalList = cp.searchCriticalPath(arr);
 		int restArr[] = new int[nodeNum - criticalList.size()];
 		int index = 0 ;
 		for(int i = 1 ; i <= nodeNum ; i ++)
@@ -46,16 +29,20 @@ public class FilterSort {
 				restArr[index ++ ] = i;
 				//System.out.println("-----------rest--nodes---- " + i);
 			}
+		NodeListInit nli = new NodeListInit() ;
 		LinkedList<Node> nodeList = 
-		NodeListInit.nodeInitiation_Array(arr, nodeNum );
-		filterAndPrint(criticalList, nodeList, restArr, nodeNum ); 
+		nli.nodeInitiation_Array(arr, nodeNum );
+		filterAndPrint(criticalList, nodeList, restArr, nodeNum );
+		System.out.println("-----Totally--Permutation ---- " + perCounter );
+		
 	}
 
 	public  void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 
 			int[] restArr, int nodeNum){
 		/*Let's ProProcess  to Print Them All */
 		if (criticalList.size() == nodeNum ){
-			printList(criticalList);
+			perCounter ++ ;
+			//printList(criticalList);
 		}
 		
 		if(restArr.length > 0){
@@ -69,8 +56,8 @@ public class FilterSort {
 			/* Locate the location of items being last one contains insertItem as its SUC 
 			 * and first one as its PRE
 			 * */
-			int lpl = lastPreLoc(insertItem, criticalList, nodeList ); 
-			int fsl = firstSucLoc(insertItem, criticalList, nodeList ); 
+			int 	lpl = lastPreLoc(insertItem, criticalList, nodeList ) , 
+					fsl = firstSucLoc(insertItem, criticalList, nodeList ); 
 
 			counter = lpl ;
 			for(;counter < fsl; ){

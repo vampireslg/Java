@@ -1,0 +1,26 @@
+#!/bin/bash
+#Program
+# Be free to choose commands to execution#
+#History : Mar_25_2013
+#@Author : A.C.God
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+echo "Type in number of command you wish to execute , if none , press ENTER to exit ! "
+echo "
+1. runtest.sh : RunTest.java/smartalgorithm ;
+2. multi.sh : RunTestMulti.java/smartalgorithm ;
+"
+read -p ">>>" num
+
+case $num in
+    "1" )
+	./runtest.sh ; echo "Results as follows--------: "
+	;;
+    "2" )
+	./multi.sh   ; echo "Results as follows--------: "
+	;;
+    ""  )
+	exit 0;   echo "搞毛啊 ？"
+	;;
+esac
+	

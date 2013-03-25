@@ -13,6 +13,7 @@ public class MethodsProducer {
 		List<Integer> sucList = new LinkedList<Integer>();
 		Random rand = new Random(47);
 		Random proR = new Random(47);
+		
 		for (int t = 0 ; t < threads ;t ++ ){
 			for(int m = 1 ; m < methods; m ++ ){
 				preList.add(t  * methods + m);
@@ -38,6 +39,8 @@ public class MethodsProducer {
 				}
 			}
 		}//for
+		
+		
 		int len = preList.size();				
 		int[][] orderArr = new int[len][2];
 		for( ; len-- > 0; ){

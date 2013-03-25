@@ -1,0 +1,33 @@
+package smartalgorithm;
+
+public class ConcFilterSort {
+	
+	int[][] removeHead(int[][] arr ,int head){		
+		//remove all tuples with head be first elements ,E.G. head = 1 , remove [1,2] ...
+		//Remember to take isolated point into consideration 
+		int counter = 0 , i = 0 ;
+		for(int[] row : arr){
+			if (row[0] == head) 
+				counter ++ ;
+		}
+		counter = arr.length - counter ;						// length of new array ;
+		int[][] newArr = new int[counter][] ;
+		for(int[] row : arr){
+			if(row[0] == head)
+				;
+			else
+				newArr[i++] = row ;
+		}
+		return newArr; 
+	}
+}
+
+class DivideWork extends Thread{
+	
+	public DivideWork(int[][] arr ,int head) {
+		// TODO Auto-generated constructor stub
+	}
+	public void run(){
+		for
+	}
+}

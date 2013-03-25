@@ -1,0 +1,92 @@
+package smartalgorithm;
+
+import java.util.LinkedList;
+
+import javax.naming.directory.SearchControls;
+
+import org.omg.CORBA.portable.RemarshalException;
+
+import sortAlgo.MethodsProducer;
+import sortAlgo.Tuple;
+
+public class RunTest {
+	public static void main(String[] args) {
+
+		int[][] initArr = {{1,2},{2,3},{3,4},{5,6},{6,7},{7,8}};
+		int[][] newArr = {{1,2},{2,3},{4,3}};
+		HashSort hs = new HashSort(2, 6);
+		System.out.println("-----------------------Test------------------------");
+		//hs.printResult(newArr);
+		
+		int[] threadArr = {5};
+		int[] methodArr = {211};
+		int nodeNum = 8 ;
+		FilterSort fs = new FilterSort();
+		for(int th : threadArr ){
+			for(int me : methodArr){
+				// -----arr ------ nodeNum--- ARE SHARED
+				Tuple<int[][], Integer> methodPro = MethodsProducer.
+						methodsProduce( th , me);
+				//ReadData rd = new ReadData();
+				int[][] arr= methodPro.getL();
+						//methodPro.getL();
+				
+				/**for(int[] row : arr)
+					System.out.println("------" + row[0] + "---------"+ row[1]);
+				
+				nodeNum =  th * me; //th * me ;
+				// FilterSort 
+				long timeS = System.currentTimeMillis(); 
+				//fs.filterPreProcess(arr, nodeNum);
+				
+				long timeE = System.currentTimeMillis(); 
+				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
+						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				HashSort newhs = new HashSort(th, nodeNum);
+				
+				timeS = System.currentTimeMillis(); 
+				//newhs.printResult(arr);
+				//timeE = System.currentTimeMillis(); 
+				System.out.println("----- HASH  Sort With Threads * Methods = " +  th + " * " + me + 
+						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
+						*/
+				// **************************************************
+				LinkedList<Integer> criticalList = new LinkedList<>();
+				CriticalPath cp = new CriticalPath()	;
+				/*criticalList = cp.searchCriticalPath(arr);
+				for(int i : criticalList)
+					System.out.println("--" + i );
+				System.out.println("------------------I am the lovely cutting line -----------------------------");
+				*/
+				LinkedList<Integer> headList = new LinkedList<>();
+				for(int[] line : newArr)
+					if( ! headList.contains(line[0]))
+						headList.add(line[0]);
+				for(int[] line : newArr){
+					headList.removeFirstOccurrence(line[1]);
+				}
+				FilterSort fs1 = new FilterSort() ;
+				System.out.println("-----Head Items ------");
+				fs1.printList(headList);
+				System.out.println("---------------------------I am the lovely cutting line ------------------------------");
+				nodeNum = 4;
+				
+				for(int head : headList){
+					
+					DivideWork dw = new DivideWork(newArr, head, nodeNum );
+					dw.start();
+						
+					try{
+						Thread.sleep(100);
+					}catch(InterruptedException e){
+						
+					}
+				}
+				
+				
+			}
+		}
+		
+	}
+}

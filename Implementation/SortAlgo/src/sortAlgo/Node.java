@@ -28,9 +28,11 @@ public class Node implements Cloneable{
 			node.sucList.add(i);
 		return node;
 	}
+	
 	public int getVal(){
 		return val; 
 	}
+	
 	public List<Integer> getPreList(){
 		return preList ;
 	}
