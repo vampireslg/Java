@@ -34,7 +34,7 @@ public class FilterSort {
 		nli.nodeInitiation_Array(arr, nodeNum );
 		filterAndPrint(criticalList, nodeList, restArr, nodeNum );
 		System.out.println("-----Totally--Permutation ---- " + perCounter );
-		perCounter = 0 ;
+		
 	}
 
 	public  void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 

@@ -18,8 +18,8 @@ public class RunTest {
 		System.out.println("-----------------------Test------------------------");
 		//hs.printResult(newArr);
 		
-		int[] threadArr = {3,4};
-		int[] methodArr = {3,4, 5};
+		int[] threadArr = {2};
+		int[] methodArr = {3,4,5};
 		int nodeNum = 0;
 		FilterSort fs = new FilterSort();
 		for(int th : threadArr ){

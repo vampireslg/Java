@@ -19,7 +19,7 @@ public class RunTestMulti {
 		//hs.printResult(newArr);
 		
 		int[] threadArr = {3,4,5};
-		int[] methodArr = {4,5,6};
+		int[] methodArr = {4,5};
 		int nodeNum = 0;
 		FilterSort fs = new FilterSort();
 		for(int th : threadArr ){
@@ -43,8 +43,6 @@ public class RunTestMulti {
 					headList.removeFirstOccurrence(line[1]);
 				}
 				FilterSort fs1 = new FilterSort() ;
-				System.out.println("-----Head Items ------");
-				fs1.printList(headList);
 				System.out.println("---------------------------I am the lovely cutting line ------------------------------");
 				
 				int co = 0 ; 

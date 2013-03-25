@@ -18,8 +18,8 @@ public class RunTest {
 		System.out.println("-----------------------Test------------------------");
 		//hs.printResult(newArr);
 		
-		int[] threadArr = {3,4};
-		int[] methodArr = {3,4, 5};
+		int[] threadArr = {2};
+		int[] methodArr = {2,3,4,5,6};
 		int nodeNum = 0;
 		FilterSort fs = new FilterSort();
 		for(int th : threadArr ){
@@ -42,7 +42,7 @@ public class RunTest {
 				long timeE = System.currentTimeMillis(); 
 				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-				
+				try{Thread.sleep(0);}catch(InterruptedException e){}
 				/////////////////////////////////////////HASH////Hash//////////////////////////////////////////////////////////////////////
 				/**HashSort newhs = new HashSort(th, nodeNum);
 				
@@ -53,7 +53,6 @@ public class RunTest {
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
 				 */	
 				// **************************************************
-				/*
 				LinkedList<Integer> criticalList = new LinkedList<>();
 				CriticalPath cp = new CriticalPath()	;
 				criticalList = cp.searchCriticalPath(arr);
@@ -91,7 +90,7 @@ public class RunTest {
 				timeE = System.currentTimeMillis(); 
 				System.out.println("----- Multi Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-				 */
+				 
 			}
 		}
 		

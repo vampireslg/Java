@@ -9,17 +9,17 @@ import org.omg.CORBA.portable.RemarshalException;
 import sortAlgo.MethodsProducer;
 import sortAlgo.Tuple;
 
-public class RunTest {
+public class RunTestMulti {
 	public static void main(String[] args) throws InterruptedException {
 
-		int[][] initArr = {{1,2},{2,3},{1,5},{1,5},{4,5},{5,6},{4,2}};
+		int[][] initArr = {{1,2},{2,3},{3,4},{5,6},{6,7},{7,8}};
 		//int[][] initArr = {{1,2},{2,3},{4,3},{5,2}};
 		HashSort hs = new HashSort(2, 6);
 		System.out.println("-----------------------Test------------------------");
 		//hs.printResult(newArr);
 		
-		int[] threadArr = {3,4};
-		int[] methodArr = {3,4, 5};
+		int[] threadArr = {4};
+		int[] methodArr = {4};
 		int nodeNum = 0;
 		FilterSort fs = new FilterSort();
 		for(int th : threadArr ){
@@ -31,35 +31,9 @@ public class RunTest {
 				int[][] arr= methodPro.getL();
 						//methodPro.getL();
 				
-				//for(int[] row : arr)
-					//System.out.println("------" + row[0] + "---------"+ row[1]);
-				
 				nodeNum =  th * me; //th * me ;
-				// FilterSort 
-				long timeS = System.currentTimeMillis(); 
 				
-				fs.filterPreProcess(arr, nodeNum);
-				long timeE = System.currentTimeMillis(); 
-				System.out.println("-----FILTER Sort With Threads * Methods = " +  th + " * " + me + 
-						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-				
-				/////////////////////////////////////////HASH////Hash//////////////////////////////////////////////////////////////////////
-				/**HashSort newhs = new HashSort(th, nodeNum);
-				
-				timeS = System.currentTimeMillis(); 
-				//newhs.printResult(arr);
-				//timeE = System.currentTimeMillis(); 
-				System.out.println("----- HASH  Sort With Threads * Methods = " +  th + " * " + me + 
-						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-				 */	
 				// **************************************************
-				/*
-				LinkedList<Integer> criticalList = new LinkedList<>();
-				CriticalPath cp = new CriticalPath()	;
-				criticalList = cp.searchCriticalPath(arr);
-				for(int i : criticalList)
-					;//System.out.println("--" + i );
-				
 				
 				LinkedList<Integer> headList = new LinkedList<>();
 				for(int[] line : arr)
@@ -79,7 +53,7 @@ public class RunTest {
 				}
 				DivideWork dw[] = new DivideWork[co] ;
 				co = 0 ;
-				timeS = System.currentTimeMillis() ;
+				long timeS = System.currentTimeMillis() ;
 				for(int head : headList){
 					dw[co]= new DivideWork(arr, head, nodeNum );
 					dw[co].start();
@@ -88,10 +62,9 @@ public class RunTest {
 				for(int i = 0 ;  i < co ; i++)
 					dw[i].join() ;
 				
-				timeE = System.currentTimeMillis(); 
+				long timeE = System.currentTimeMillis(); 
 				System.out.println("----- Multi Sort With Threads * Methods = " +  th + " * " + me + 
 						"  Time Consumed : "+ (timeE - timeS) + " Millis -------.");
-				 */
 			}
 		}
 		

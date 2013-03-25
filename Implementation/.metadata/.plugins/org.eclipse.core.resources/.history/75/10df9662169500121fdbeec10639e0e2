@@ -5,8 +5,7 @@ import java.util.List;
 
 import sortAlgo.*;
 public class FilterSort {
-	int perCounter = 0 ;
-	
+		
 	public  static void main(String[] args) throws Exception{
 		int[][] initArr = {{1,2},{3,4},{5,6},{6,7},{7,8},{8,9},{2,3}};
 		FilterSort fs = new FilterSort();
@@ -19,6 +18,7 @@ public class FilterSort {
 	 * Input int[][] array , output ALL possible sequence .
 	 */
 	public  void filterPreProcess(int[][] arr, int nodeNum){
+		int perCounter = 0 ;
 		LinkedList<Integer> criticalList = new LinkedList<>();
 		CriticalPath cp = new CriticalPath()	;
 		criticalList = cp.searchCriticalPath(arr);
@@ -32,13 +32,13 @@ public class FilterSort {
 		NodeListInit nli = new NodeListInit() ;
 		LinkedList<Node> nodeList = 
 		nli.nodeInitiation_Array(arr, nodeNum );
-		filterAndPrint(criticalList, nodeList, restArr, nodeNum );
+		filterAndPrint(criticalList, nodeList, restArr, nodeNum , perCounter );
 		System.out.println("-----Totally--Permutation ---- " + perCounter );
-		perCounter = 0 ;
+		
 	}
 
 	public  void filterAndPrint(LinkedList<Integer> criticalList, LinkedList<Node> nodeList, 
-			int[] restArr, int nodeNum){
+			int[] restArr, int nodeNum , int perCounter){
 		/*Let's ProProcess  to Print Them All */
 		if (criticalList.size() == nodeNum ){
 			perCounter ++ ;
@@ -64,7 +64,7 @@ public class FilterSort {
 				LinkedList<Integer> oldCriList = new LinkedList<>();
 				copyList(criticalList, oldCriList);
 				oldCriList.add(counter ,insertItem) ;
-				filterAndPrint(oldCriList, nodeList, eRestArr, nodeNum) ;
+				filterAndPrint(oldCriList, nodeList, eRestArr, nodeNum, perCounter) ;
 				counter ++;
 			}
 		}
